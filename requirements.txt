@@ -1,0 +1,4 @@
+identify==2.6.19
+requests==2.34.2
+PyYAML==6.0.3
+pytest==9.1.1

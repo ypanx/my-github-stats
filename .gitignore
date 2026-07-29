@@ -1,11 +1,15 @@
-# Local design doc — contains internal repo names, per-repo volumes and tooling
-# details that Section 2.6 keeps off the published surface. Never commit.
+# TEMPORARY
 plan.md
+plan_status/
+verify_auth.py
+tmp_scripts.py
 
-# Outputs that carry attribution (Section 2.6 / Phase 2)
-stats.local.json          # repo-attributed event records
-paths_fixture.json        # real file paths from commit history
-probe_out/                # raw API dumps from Phase 1
+# Repo attributed event records
+stats.local.json
+# real file paths from commit history
+paths_fixture.json
+# raw API dumps from Phase 1
+probe_out/
 
 # Secrets
 .env
