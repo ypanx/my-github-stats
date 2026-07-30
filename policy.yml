@@ -1,0 +1,109 @@
+# Which files count towards the language breakdown, and what each is called.
+#
+# This file holds judgements rather than logic, which is why it is configuration:
+# the decisions here get revisited as new file types turn up.
+#
+# There is deliberately no `unknown:` key. Unknown is a residual — whatever
+# `identify` failed to recognise and no rule below claimed — not a category.
+# classify.py rejects this file if one is ever added, and rejects any key it does
+# not recognise, so a typo cannot silently disable a rule.
+
+display:                    # only where capitalize() is wrong
+  ts: TypeScript
+  tsx: TypeScript
+  jsx: JavaScript
+  javascript: JavaScript
+  pyi: Python
+  sql: SQL
+  yaml: YAML
+  proto: Protocol Buffers
+  plain-text: Text
+  jupyter: Jupyter Notebook
+
+# Tags that name the TOOL which reads a file, or the fact that it is text, rather
+# than the language it is written in. `identify` returns several tags per file and
+# the display name is the alphabetically first surviving one, so an early-sorting
+# marker would win: `pyproject.toml` came out as a language called "Pyproject",
+# and `README.rst` as "Text" because `plain-text` sorts before `rst`.
+#
+# NAMING ONLY. Nothing here changes whether a file counts, so unlike `ignore`
+# there is no alarm being suppressed and listing a tag pre-emptively is safe.
+# A demoted tag is still used if it is the ONLY thing left, which is what keeps
+# `AUTHORS` and `x.txt` named "Text".
+demote:
+  - plain-text              # generic; loses to markdown, rst, python, yaml, ...
+  - pyproject               # -> Toml
+  - cargo                   # -> Toml
+  - coveragerc              # -> Ini
+  - flake8                  # -> Ini
+  - gitconfig               # -> Ini
+  - gitlint                 # -> Ini
+  - codespellrc             # -> Ini
+  - hgrc                    # -> Ini
+  - isort                   # -> Ini (already correct; now by rule, not by luck)
+  - pylintrc                # -> Ini
+  - pdbrc                   # -> Python
+  - salt-lint               # -> YAML
+  - sbt                     # -> Scala
+  - alpm                    # PKGBUILD -> Bash
+  - pkgbuild
+  - xcodebuild
+# `makefile` is deliberately absent — it IS the language, not a marker.
+
+ignore:                     # recognized; would otherwise be COUNTED
+  - json
+  - csv
+  - tsv
+  - xml                     # also catches .svg, which carries the xml tag
+  - go-mod
+  - go-sum
+  - gitignore
+  - gitattributes           # repo metadata, same class as gitignore
+  - dotenv
+
+# Rescued from `ignore`: recognized as data by one of its tags, but authored by
+# hand. A Jupyter notebook is stored as JSON, so `json` above would discard it
+# along with the real data files. Checked BEFORE `ignore`, and the display name
+# comes from the rescuing tag rather than the ignored one.
+count_anyway:
+  - jupyter
+
+ignore_extensions: [lock]   # untagged, but high enough volume to state explicitly
+
+# Path-based exclusions, for content that is generated or vendored rather than
+# written. Tags cannot express this: a generated `.pb.go` file is valid Go and
+# `identify` is right to say so — what disqualifies it is where it came from.
+#
+# Matched against any path COMPONENT, so `vendor` catches `a/b/vendor/c.go`.
+ignore_directories:
+  - vendor
+  - third_party
+  - node_modules
+
+# Matched against the BASENAME with shell globbing.
+#
+# Licences are matched by name rather than by directory, because the name is what
+# disqualifies them: a licence is copied in whole from elsewhere, and is no more
+# authored at the repository root than in a subdirectory. One such file supplied
+# 674 of the 677 lines previously reported as the "Text" language.
+#
+# Deliberately absent: `mock*` and `migrations/`, which are frequently written by
+# hand and accounted for 589 and 104 real lines; `AUTHORS` and `NOTICE`, which
+# routinely carry attribution somebody wrote; and `requirements.txt`, since
+# choosing a dependency version is a real change even when it is one line.
+#
+# Matching is case-sensitive, so a lower-case `license` escapes these globs. That
+# is harmless rather than a gap: the tagging library does not know that spelling
+# either, so such a file carries no tags and joins the unclassifiable residual
+# instead of counting as a language.
+ignore_globs:
+  - "*.pb.go"               # protobuf codegen
+  - "*_pb2.py"
+  - "*_pb2_grpc.py"
+  - "*.min.js"              # minified build output
+  - "*.min.css"
+  - "LICENSE*"              # copied in, not written here; covers .md and .txt
+  - "LICENCE*"              # the British spelling, which `identify` does not know
+  - "COPYING*"              # what the GNU projects call the same file
+
+unknown_threshold: 0.01
