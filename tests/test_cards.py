@@ -13,6 +13,7 @@ from xml.etree import ElementTree
 import pytest
 
 from cards import (
+    CARD_HEIGHT,
     NAMED_LANGUAGES,
     CardError,
     activity_rows,
@@ -104,6 +105,34 @@ class TestBothCardsAreDocuments:
         root = ElementTree.fromstring(render_all(real, NAME)[filename])
         assert root.get("aria-label")
         assert root.find(f"{SVG}title") is not None
+
+
+class TestBothCardsAreTheSameSize:
+    """Markdown aligns side-by-side images on the text baseline, so a difference in
+    height offsets one card against the other by exactly that difference. Embedding
+    them next to each other in a profile README is the whole point."""
+
+    def test_they_are_the_same_height_and_width(self, real):
+        cards = render_all(real, NAME)
+        sizes = {name: (ElementTree.fromstring(svg).get("width"),
+                        ElementTree.fromstring(svg).get("height"))
+                 for name, svg in cards.items()}
+        assert len(set(sizes.values())) == 1, sizes
+
+    @pytest.mark.parametrize("filename", ["activity.svg", "languages.svg"])
+    def test_the_declared_height_matches_the_constant(self, real, filename):
+        root = ElementTree.fromstring(render_all(real, NAME)[filename])
+        assert root.get("height") == str(CARD_HEIGHT)
+        assert root.get("viewBox") == f"0 0 480 {CARD_HEIGHT}"
+
+    @pytest.mark.parametrize("filename", ["activity.svg", "languages.svg"])
+    def test_nothing_is_drawn_outside_the_card(self, real, filename):
+        """A legend row below the border reads as a clipped card."""
+        svg = render_all(real, NAME)[filename]
+        for element in ElementTree.fromstring(svg).iter():
+            for attribute in ("y", "cy", "y1", "y2"):
+                if (value := element.get(attribute)) is not None:
+                    assert float(value) <= CARD_HEIGHT, (filename, attribute, value)
 
 
 class TestTheming:
