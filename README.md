@@ -50,7 +50,7 @@ Both window ends are inclusive and `--horizon` counts dates, so 365 covers 365 d
 
 `--verbose` adds repository names, file paths and commit hashes to the output. Local use only — workflow logs on a public repository are permanent.
 
-## The Cards
+## Cards
 
 ```markdown
 ![Activity](https://raw.githubusercontent.com/ypanx/my-github-stats/main/cards/activity.svg)
@@ -59,7 +59,7 @@ Both window ends are inclusive and `--horizon` counts dates, so 365 covers 365 d
 
 One image each. Each file carries both themes in a media query, defaulting to dark. Do not add a second image or a `#gh-dark-mode-only` fragment.
 
-## The dashboard
+## Dashboard
 
 Served from Pages at `https://ypanx.github.io/my-github-stats/dashboard/`. Locally:
 
@@ -69,6 +69,6 @@ Served from Pages at `https://ypanx.github.io/my-github-stats/dashboard/`. Local
 
 It must be served from the project root rather than opened as a file, because it fetches `../data/stats.json`. Window presets are 30, 60, 90 and 365 days, year to date, and a custom range, all filtered in the browser.
 
-## The schedule
+## Schedule
 
 `.github/workflows/main.yml` runs daily: collect, render, test, commit.
