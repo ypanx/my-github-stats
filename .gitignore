@@ -1,24 +1,23 @@
-# TEMPORARY
-plan.md
-plan_status/
-verify_auth.py
-tmp_scripts.py
+# Editors, tooling, and operating system noise
+.claude/
+.DS_Store
+.idea/
+.vscode/
 
-# Repo attributed event records
-stats.local.json
-# real file paths from commit history
-paths_fixture.json
-# raw API dumps from Phase 1
-probe_out/
+# Planning notes
+plan/
+
+# Python
+.pytest_cache/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Repository attribution, which must never be committed
+stats.local.json*
 
 # Secrets
 .env
 
-# Python
-.venv/
-__pycache__/
-*.py[cod]
-.pytest_cache/
-
-# Editor
-.vscode/
+# Temporaries from the atomic write
+*.tmp
