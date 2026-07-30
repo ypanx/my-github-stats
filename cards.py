@@ -34,6 +34,17 @@ from utils import (
 #: visibly there.
 NAMED_LANGUAGES = 8
 
+#: Both cards are this tall. Markdown aligns side-by-side images on the text
+#: baseline, so unequal heights offset one card against the other by the difference.
+CARD_HEIGHT = 200
+
+#: Languages card: the bar, then a three-row legend. Spread to fill the shared
+#: height rather than leaving the extra space below the legend.
+_BAR = (20, 54, 440, 14)
+_LEGEND_FIRST = 106
+_LEGEND_STEP = 30
+_LEGEND_COLUMN = 147
+
 #: Row geometry, shared by both columns of the activity card.
 _FIRST_ROW = 86
 _ROW_STEP = 23
@@ -137,8 +148,8 @@ ACTIVITY_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" width="480" heigh
 </svg>
 """
 
-LANGUAGES_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" width="480" height="152"
-     viewBox="0 0 480 152" role="img" aria-label="{{alt}}">
+LANGUAGES_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" width="480" height="200"
+     viewBox="0 0 480 200" role="img" aria-label="{{alt}}">
   <title>{{alt}}</title>
 
   <style>
@@ -165,17 +176,17 @@ LANGUAGES_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" width="480" heig
   </style>
 
   <defs>
-    <clipPath id="bar"><rect x="20" y="44" width="440" height="10" rx="5"/></clipPath>
+    <clipPath id="bar"><rect x="20" y="54" width="440" height="14" rx="7"/></clipPath>
   </defs>
 
-  <rect class="card" x="0.5" y="0.5" width="479" height="151" rx="6"/>
+  <rect class="card" x="0.5" y="0.5" width="479" height="199" rx="6"/>
 
   <text class="title" x="20" y="30">{{title}}</text>
   <text class="window" x="460" y="30" text-anchor="end">{{window}}</text>
 
   <!-- The track shows through wherever a segment rounds away to nothing, so the
        bar reads as a full bar rather than as one that stops early. -->
-  <rect class="track" x="20" y="44" width="440" height="10" rx="5"/>
+  <rect class="track" x="20" y="54" width="440" height="14" rx="7"/>
   <g clip-path="url(#bar)">
 {{segments}}
   </g>
@@ -284,23 +295,24 @@ def render_languages(payload: dict[str, Any], name: str,
     # Segment edges are rounded once, cumulatively, so the pieces tile the bar
     # exactly. Rounding each width on its own leaves visible gaps, and giving a
     # tiny segment a minimum width would make the bar disagree with the legend.
-    edges, offset = [20.0], 20.0
+    left, top, width, thickness = _BAR
+    edges, offset = [float(left)], float(left)
     for segment in found:
-        offset += 440 * segment.share(total)
+        offset += width * segment.share(total)
         edges.append(offset)
 
     pieces = []
     for index in range(len(found)):
         start, end = round(edges[index]), round(edges[index + 1])
         if end > start:
-            pieces.append(f'    <rect class="s{index}" x="{start}" y="44" '
-                          f'width="{end - start}" height="10"/>')
+            pieces.append(f'    <rect class="s{index}" x="{start}" y="{top}" '
+                          f'width="{end - start}" height="{thickness}"/>')
 
     legend = []
     for index, segment in enumerate(found):
         column, row = index % 3, index // 3
-        x = 20 + column * 147
-        baseline = 82 + row * 22
+        x = left + column * _LEGEND_COLUMN
+        baseline = _LEGEND_FIRST + row * _LEGEND_STEP
         legend.append(
             f'  <circle class="s{index}" cx="{x + 4}" cy="{baseline - 4}" r="4"/>\n'
             f'  <text class="name" x="{x + 15}" y="{baseline}">'

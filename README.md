@@ -67,7 +67,7 @@ Served from Pages at `https://ypanx.github.io/my-github-stats/dashboard/`. Local
 .venv/bin/python -m http.server 8000     # then open /dashboard/
 ```
 
-It must be served from the project root rather than opened as a file, because it fetches `../data/stats.json`. Window presets are 30, 60, 90 and 365 days, year to date, and a custom range, all filtered in the browser.
+It must be served from the project root rather than opened as a file, because it fetches `../data/stats.json`. Window presets are 30, 60, 90 and 365 days, the current quarter, year to date, and a custom range, all filtered in the browser.
 
 ## Schedule
 
