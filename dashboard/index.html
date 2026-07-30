@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<!--
+  A dashboard over ../data/stats.json.
+
+  Self-contained: no libraries, no CDN, no build step. The whole record set is
+  loaded once and every window is filtered in memory, so changing the window does
+  no network work at all.
+
+  Nothing per-date is published, so every figure here — including the heatmap — is
+  derived in the browser from the four record arrays. That is what makes the page
+  count exactly what the cards count. A file that no rule in languages.yml claims
+  simply does not count, and nothing about it is published, so there is no figure
+  here for it either.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Review and contribution statistics</title>
+<style>
+  /* Dark is the base and light is an override, matching the cards, so anything
+     that ignores the preference query gets the intended look. */
+  :root {
+    --canvas: #0d1117;
+    --panel: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --label: #c9d1d9;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --empty: #1c2128;
+    /* The first step is chosen for the gap on both sides: far enough from empty
+       that "nothing happened" is not read as "a little happened", and far enough
+       from the second step to stay a step. */
+    --ramp-1: #0d419d;
+    --ramp-2: #0969da;
+    --ramp-3: #218bff;
+    --ramp-4: #79c0ff;
+    --approved: #3fb950;
+    --commented: #58a6ff;
+    --changes: #d29922;
+    --dismissed: #8b949e;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --canvas: #ffffff;
+      --panel: #f6f8fa;
+      --border: #d0d7de;
+      --text: #1f2328;
+      --label: #424a53;
+      --muted: #656d76;
+      --accent: #0969da;
+      --empty: #eaeef2;
+      --ramp-1: #a5d6ff;
+      --ramp-2: #54aeff;
+      --ramp-3: #0969da;
+      --ramp-4: #0a3069;
+      --approved: #1a7f37;
+      --commented: #0969da;
+      --changes: #9a6700;
+      --dismissed: #656d76;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px 20px 64px;
+    background: var(--canvas);
+    color: var(--text);
+    font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 15px; margin: 0 0 2px; }
+  .sub, .note { color: var(--muted); font-size: 12px; margin: 0; }
+  .note { margin-top: 8px; }
+
+  /* Window controls */
+  .windowbar {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    margin: 20px 0 24px; padding: 12px; border: 1px solid var(--border);
+    border-radius: 8px; background: var(--panel);
+  }
+  button.preset {
+    font: inherit; font-size: 13px; padding: 5px 12px; cursor: pointer;
+    color: var(--label); background: transparent;
+    border: 1px solid var(--border); border-radius: 999px;
+  }
+  button.preset:hover { border-color: var(--accent); color: var(--text); }
+  button.preset[aria-pressed="true"] {
+    border-color: var(--accent); color: var(--canvas); background: var(--accent);
+  }
+  .range { margin-left: auto; display: flex; gap: 6px; align-items: center;
+           color: var(--muted); font-size: 12px; }
+  input[type=date] {
+    font: inherit; font-size: 12px; padding: 4px 6px; color: var(--text);
+    background: var(--canvas); border: 1px solid var(--border); border-radius: 6px;
+    color-scheme: dark light;
+  }
+
+  /* Tiles */
+  .tiles { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .tile { padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px;
+          background: var(--panel); }
+  .tile .n { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .tile .k { color: var(--muted); font-size: 12px; margin-top: 2px; }
+
+  /* Sections: chart beside its table on wide screens, stacked below on narrow. */
+  section { margin-top: 28px; padding: 16px; border: 1px solid var(--border);
+            border-radius: 8px; background: var(--panel); }
+  .split { display: grid; gap: 20px; margin-top: 14px; align-items: center; }
+  @media (min-width: 960px) { .split { grid-template-columns: 1fr 320px; } }
+  /* Without this a wide chart blows out the 1fr track instead of scrolling
+     inside it, and the panel spills past its own border. */
+  .split > * { min-width: 0; }
+  .scroll { overflow-x: auto; }
+  .tablewrap { max-height: 320px; overflow-y: auto; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  caption { text-align: left; color: var(--muted); font-size: 11px;
+            padding-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+  th, td { text-align: right; padding: 3px 6px; border-bottom: 1px solid var(--border); }
+  th:first-child, td:first-child { text-align: left; }
+  thead th { color: var(--muted); font-weight: 600; position: sticky; top: 0;
+             background: var(--panel); }
+  td.num { font-variant-numeric: tabular-nums; }
+
+  /* Legends */
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 10px;
+            font-size: 12px; color: var(--label); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .swatch { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+
+  /* Definition tooltips. Keyboard reachable, and no JavaScript. */
+  .def { border-bottom: 1px dotted var(--muted); cursor: help; position: relative; }
+  .def:hover::after, .def:focus::after {
+    content: attr(data-def); position: absolute; left: 0; top: 140%; z-index: 5;
+    width: max-content; max-width: 280px; padding: 6px 8px; font-size: 12px;
+    line-height: 1.4; color: var(--text); background: var(--canvas);
+    border: 1px solid var(--border); border-radius: 6px; white-space: normal;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .bar { display: block; width: 100%; height: 24px; }
+  .empty { color: var(--muted); font-size: 13px; padding: 8px 0; }
+  #status { padding: 24px 0; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Review and contribution statistics</h1>
+  <p class="sub" id="subtitle">Loading…</p>
+
+  <div class="windowbar" id="windowbar" hidden>
+    <button class="preset" data-days="30">30 days</button>
+    <button class="preset" data-days="60">60 days</button>
+    <button class="preset" data-days="90">90 days</button>
+    <button class="preset" data-days="365">365 days</button>
+    <button class="preset" data-span="quarter">This quarter</button>
+    <button class="preset" data-span="ytd">Year to date</button>
+    <div class="range">
+      <label for="from">from</label><input type="date" id="from">
+      <label for="to">to</label><input type="date" id="to">
+    </div>
+  </div>
+
+  <div id="status">Loading ../data/stats.json…</div>
+  <div id="dashboard" hidden>
+    <div class="tiles" id="tiles"></div>
+
+    <section>
+      <h2>Languages</h2>
+      <p class="sub">Share of lines changed. Only counted lines appear, so the
+        segments total the lines figure exactly.</p>
+      <div class="split">
+        <div>
+          <svg class="bar" id="langbar" viewBox="0 0 100 14" preserveAspectRatio="none"
+               role="img" aria-labelledby="langalt"></svg>
+          <span id="langalt" hidden></span>
+          <div class="legend" id="langlegend"></div>
+        </div>
+        <div class="tablewrap"><table id="langtable"></table></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Activity</h2>
+      <p class="sub">Records on each date, across commits, pull requests opened,
+        review events and comments. One hue, darker to lighter with volume.</p>
+      <div class="split">
+        <div class="scroll"><svg id="heatmap" role="img"
+             aria-labelledby="heatalt"></svg><span id="heatalt" hidden></span></div>
+        <div class="tablewrap"><table id="heattable"></table></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Time to merge</h2>
+      <p class="sub">Hours from opening to merge, by week. Two series on one axis;
+        weeks with no merge are a gap rather than a zero.</p>
+      <div class="split">
+        <div>
+          <div class="scroll"><svg id="cycle" role="img"
+               aria-labelledby="cyclealt"></svg><span id="cyclealt" hidden></span></div>
+          <div class="legend">
+            <span><i class="swatch" style="background:var(--ramp-3)"></i>median</span>
+            <span><i class="swatch" style="background:var(--changes)"></i>90th percentile</span>
+          </div>
+        </div>
+        <div class="tablewrap"><table id="cycletable"></table></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reviews given</h2>
+      <p class="sub">By state, as a share of
+        <span class="def" tabindex="0" data-def="Reviews of other people's pull
+          requests. Reviews of one's own work are excluded, because counting them
+          would mean being reviewed more made one look more active.">reviews
+          given</span>.</p>
+      <div class="split">
+        <div>
+          <svg class="bar" id="statebar" viewBox="0 0 100 14" preserveAspectRatio="none"
+               role="img" aria-labelledby="statealt"></svg>
+          <span id="statealt" hidden></span>
+          <div class="legend" id="statelegend"></div>
+        </div>
+        <div class="tablewrap"><table id="statetable"></table></div>
+      </div>
+    </section>
+
+    <p class="note" id="footnote"></p>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+const DAY = 86400000;
+const day = s => Date.UTC(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10));
+const iso = ms => new Date(ms).toISOString().slice(0, 10);
+const num = n => n.toLocaleString("en-US");
+const SECTIONS = ["commits", "prs", "review_envelopes", "comments"];
+const DATE_KEY = {commits: "date", prs: "created", review_envelopes: "date",
+                  comments: "date"};
+const STATES = [["APPROVED", "approved", "--approved"],
+                ["COMMENTED", "commented", "--commented"],
+                ["CHANGES_REQUESTED", "changes requested", "--changes"],
+                ["DISMISSED", "dismissed", "--dismissed"]];
+
+let DATA = null, COLORS = null, BOUNDS = null;
+
+/* The same definition as utils.nearest_rank. Interpolating between the two middle
+   values of an even-length list gives a different answer in the first decimal
+   place, which is the precision reported. */
+function nearestRank(values, proportion) {
+  if (!values.length) return null;
+  const ordered = [...values].sort((a, b) => a - b);
+  const index = Math.min(Math.max(Math.ceil(proportion * ordered.length) - 1, 0),
+                         ordered.length - 1);
+  return ordered[index];
+}
+
+function filterWindow(from, to) {
+  const lo = day(from), hi = day(to), out = {};
+  for (const section of SECTIONS) {
+    const key = DATE_KEY[section];
+    out[section] = DATA[section].filter(r => {
+      const at = day(r[key]);
+      return at >= lo && at <= hi;
+    });
+  }
+  return out;
+}
+
+function metrics(view) {
+  const given = view.review_envelopes.filter(r => !r.on_own_pr);
+  const dates = new Set();
+  for (const section of SECTIONS) {
+    for (const record of view[section]) dates.add(record[DATE_KEY[section]]);
+  }
+  const durations = view.prs.map(p => p.cycle_hours).filter(h => h !== null);
+  return {
+    commits: view.commits.length,
+    lines: totalLines(view.commits),
+    prs_opened: view.prs.length,
+    prs_merged: view.prs.filter(p => p.merged).length,
+    reviews_given: given.length,
+    review_envelopes: view.review_envelopes.length,
+    reviews_substantive: given.filter(r => r.has_body || r.inline_count > 0).length,
+    comments: view.comments.length,
+    comments_inline: view.comments.filter(c => c.kind === "inline").length,
+    active_days: dates.size,
+    median: nearestRank(durations, 0.5),
+    byState: Object.fromEntries(
+      STATES.map(([state]) => [state, given.filter(r => r.state === state).length])),
+  };
+}
+
+function totalLines(commits) {
+  let total = 0;
+  for (const commit of commits) {
+    for (const counts of Object.values(commit.languages)) {
+      total += counts.additions + counts.deletions;
+    }
+  }
+  return total;
+}
+
+function languageTotals(commits) {
+  const totals = new Map();
+  for (const commit of commits) {
+    for (const [name, counts] of Object.entries(commit.languages)) {
+      totals.set(name, (totals.get(name) || 0) + counts.additions + counts.deletions);
+    }
+  }
+  return [...totals].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
+/* Rendering ------------------------------------------------------------- */
+
+const $ = id => document.getElementById(id);
+const escape = s => String(s).replace(/[&<>"]/g,
+  c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+
+function tile(value, label, definition) {
+  const key = definition
+    ? `<span class="def" tabindex="0" data-def="${escape(definition)}">${label}</span>`
+    : label;
+  return `<div class="tile"><div class="n">${value}</div><div class="k">${key}</div></div>`;
+}
+
+function renderTiles(m) {
+  const merge = m.median === null ? "&mdash;" : `${m.median.toFixed(1)}h`;
+  $("tiles").innerHTML = [
+    tile(num(m.commits), "commits"),
+    tile(num(m.lines), "lines changed",
+         "Additions plus deletions across counted languages. Generated, vendored " +
+         "and data files are excluded, so this is smaller than the raw diff size."),
+    tile(num(m.prs_opened), "pull requests opened"),
+    tile(num(m.prs_merged), "merged"),
+    tile(merge, "median time to merge",
+         "Nearest-rank median of hours from opening to merge, over pull requests " +
+         "merged inside the window."),
+    tile(num(m.reviews_given), "reviews given",
+         "Review events on other people's pull requests. GitHub creates one event " +
+         "per inline comment posted outside a batch, so this counts events rather " +
+         "than sittings."),
+    tile(num(m.reviews_substantive), "substantive reviews",
+         "Reviews carrying a body or at least one inline comment. It overlaps " +
+         "approvals rather than partitioning them, so the two do not sum."),
+    tile(num(m.comments), "comments",
+         "Inline and conversational comments, on one's own pull requests as well " +
+         "as on other people's."),
+    tile(num(m.active_days), "active dates",
+         "Dates on which any collected record says something happened, as a union " +
+         "over all four sections."),
+  ].join("");
+}
+
+function renderLanguages(view) {
+  const totals = languageTotals(view.commits);
+  const total = totalLines(view.commits);
+  const bar = $("langbar"), legend = $("langlegend"), table = $("langtable");
+  if (!total) {
+    bar.innerHTML = "";
+    legend.innerHTML = '<span class="empty">No lines in this window.</span>';
+    table.innerHTML = "";
+    return;
+  }
+
+  const named = totals.slice(0, 8);
+  const rest = totals.slice(8);
+  const shown = [...named];
+  if (rest.length) {
+    shown.push([`+ ${rest.length} smaller`, rest.reduce((s, [, n]) => s + n, 0)]);
+  }
+  const colorFor = name => (COLORS.dark[name] || COLORS.fold);
+
+  /* Edges are accumulated once so the pieces tile the bar exactly, the same way
+     the SVG card does it. The viewBox is 100 wide, so these are percentages. */
+  let offset = 0;
+  bar.innerHTML = shown.map(([name, lines]) => {
+    const start = offset;
+    offset += 100 * lines / total;
+    return `<rect x="${start}" y="0" width="${offset - start}" height="14"` +
+           ` fill="${colorFor(name)}"><title>${escape(name)}</title></rect>`;
+  }).join("");
+
+  legend.innerHTML = shown.map(([name, lines]) =>
+    `<span><i class="swatch" style="background:${colorFor(name)}"></i>` +
+    `${escape(name)} ${share(lines, total)}</span>`).join("");
+
+  $("langalt").textContent = `Languages by lines changed, ${num(total)} in total.`;
+  table.innerHTML = tableHTML("lines changed", ["language", "lines", "share"],
+    totals.map(([name, lines]) => [escape(name), num(lines), share(lines, total)]));
+}
+
+const share = (part, total) => {
+  const value = total ? part / total : 0;
+  return value > 0 && value < 0.001 ? "<0.1%" : `${(value * 100).toFixed(1)}%`;
+};
+
+function tableHTML(caption, headers, rows) {
+  const head = headers.map(h => `<th>${h}</th>`).join("");
+  const body = rows.map(cells =>
+    `<tr>${cells.map((c, i) => i ? `<td class="num">${c}</td>` : `<td>${c}</td>`)
+      .join("")}</tr>`).join("");
+  return `<caption>${caption}</caption><thead><tr>${head}</tr></thead>` +
+         `<tbody>${body}</tbody>`;
+}
+
+function renderHeatmap(view, from, to) {
+  const counts = new Map();
+  for (const section of SECTIONS) {
+    for (const record of view[section]) {
+      const at = record[DATE_KEY[section]];
+      counts.set(at, (counts.get(at) || 0) + 1);
+    }
+  }
+
+  const cell = 11, gap = 3, step = cell + gap;
+  const start = day(from) - new Date(day(from)).getUTCDay() * DAY;
+  const weeks = Math.ceil((day(to) - start) / (7 * DAY)) + 1;
+  const busiest = Math.max(1, ...counts.values());
+
+  const parts = [];
+  const months = [];
+  let lastMonth = null;
+  for (let week = 0; week < weeks; week++) {
+    for (let weekday = 0; weekday < 7; weekday++) {
+      const at = start + (week * 7 + weekday) * DAY;
+      if (at < day(from) || at > day(to)) continue;
+      const date = iso(at);
+      const value = counts.get(date) || 0;
+      const month = date.slice(0, 7);
+      /* Labelled at the column holding the first of the month, and only when
+         that day is inside the window. A window starting mid-month would
+         otherwise put two labels within a column of each other and draw them on
+         top of one another. */
+      if (month !== lastMonth) {
+        if (date.slice(8, 10) === "01") months.push([week, date.slice(5, 7)]);
+        lastMonth = month;
+      }
+      parts.push(
+        `<rect x="${week * step}" y="${16 + weekday * step}" width="${cell}"` +
+        ` height="${cell}" rx="2" fill="${rampColor(value, busiest)}">` +
+        `<title>${date}: ${value} record${value === 1 ? "" : "s"}</title></rect>`);
+    }
+  }
+
+  const labels = months.map(([week, month]) =>
+    `<text x="${week * step}" y="10" fill="var(--muted)" font-size="10">` +
+    `${MONTHS[+month - 1]}</text>`).join("");
+
+  const map = $("heatmap");
+  map.setAttribute("width", weeks * step);
+  map.setAttribute("height", 16 + 7 * step);
+  map.innerHTML = labels + parts.join("");
+  $("heatalt").textContent =
+    `Activity between ${from} and ${to}, busiest date ${busiest} records.`;
+
+  const byMonth = new Map();
+  for (const [date, value] of counts) {
+    const month = date.slice(0, 7);
+    const slot = byMonth.get(month) || {dates: 0, records: 0};
+    slot.dates += 1;
+    slot.records += value;
+    byMonth.set(month, slot);
+  }
+  $("heattable").innerHTML = tableHTML("per month",
+    ["month", "active dates", "records"],
+    [...byMonth].sort().map(([month, slot]) =>
+      [month, num(slot.dates), num(slot.records)]));
+}
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
+                "Oct", "Nov", "Dec"];
+
+/* A single hue, darker to lighter with volume. Four steps plus empty: more steps
+   than that cannot be told apart at 11px. */
+function rampColor(value, busiest) {
+  if (!value) return "var(--empty)";
+  const share = value / busiest;
+  if (share <= 0.25) return "var(--ramp-1)";
+  if (share <= 0.5) return "var(--ramp-2)";
+  if (share <= 0.75) return "var(--ramp-3)";
+  return "var(--ramp-4)";
+}
+
+function renderCycle(view, from, to) {
+  /* Weekly buckets from the window start, so the first bucket always begins on
+     the window's own first date rather than on an arbitrary calendar boundary. */
+  const buckets = new Map();
+  for (const pr of view.prs) {
+    if (pr.cycle_hours === null) continue;
+    const offset = Math.floor((day(pr.created) - day(from)) / (7 * DAY));
+    if (!buckets.has(offset)) buckets.set(offset, []);
+    buckets.get(offset).push(pr.cycle_hours);
+  }
+
+  const points = [...buckets].sort((a, b) => a[0] - b[0]).map(([offset, hours]) => ({
+    week: iso(day(from) + offset * 7 * DAY),
+    count: hours.length,
+    median: nearestRank(hours, 0.5),
+    p90: nearestRank(hours, 0.9),
+  }));
+
+  const chart = $("cycle");
+  if (!points.length) {
+    chart.innerHTML = "";
+    chart.removeAttribute("height");
+    $("cycletable").innerHTML = "";
+    $("cyclealt").textContent = "No pull requests merged in this window.";
+    return;
+  }
+
+  const width = Math.max(320, points.length * 26 + 60), height = 180;
+  const pad = {left: 44, right: 12, top: 12, bottom: 26};
+  const top = Math.max(...points.map(p => p.p90)) * 1.1 || 1;
+  const x = i => pad.left + (points.length === 1 ? 0
+    : i * (width - pad.left - pad.right) / (points.length - 1));
+  const y = v => height - pad.bottom - (v / top) * (height - pad.top - pad.bottom);
+
+  const ticks = [0, top / 2, top].map(value =>
+    `<line x1="${pad.left}" y1="${y(value)}" x2="${width - pad.right}"` +
+    ` y2="${y(value)}" stroke="var(--border)"/>` +
+    `<text x="${pad.left - 6}" y="${y(value) + 4}" text-anchor="end"` +
+    ` fill="var(--muted)" font-size="10">${Math.round(value)}h</text>`).join("");
+
+  const line = (key, color) => {
+    const path = points.map((p, i) => `${i ? "L" : "M"}${x(i)},${y(p[key])}`).join(" ");
+    const dots = points.map((p, i) =>
+      `<circle cx="${x(i)}" cy="${y(p[key])}" r="2.5" fill="${color}">` +
+      `<title>week of ${p.week}: ${p[key].toFixed(1)}h over ${p.count} merged` +
+      `</title></circle>`).join("");
+    return `<path d="${path}" fill="none" stroke="${color}" stroke-width="1.75"/>${dots}`;
+  };
+
+  chart.setAttribute("width", width);
+  chart.setAttribute("height", height);
+  chart.innerHTML = ticks +
+    `<text x="${pad.left}" y="${height - 8}" fill="var(--muted)" font-size="10">` +
+    `${points[0].week}</text>` +
+    `<text x="${width - pad.right}" y="${height - 8}" text-anchor="end"` +
+    ` fill="var(--muted)" font-size="10">${points[points.length - 1].week}</text>` +
+    line("median", "var(--ramp-3)") + line("p90", "var(--changes)");
+
+  $("cyclealt").textContent =
+    `Median and 90th percentile time to merge by week, between ${from} and ${to}.`;
+  $("cycletable").innerHTML = tableHTML("by week",
+    ["week of", "merged", "median", "p90"],
+    points.map(p => [p.week, num(p.count), `${p.median.toFixed(1)}h`,
+                     `${p.p90.toFixed(1)}h`]));
+}
+
+function renderStates(m) {
+  const total = m.reviews_given;
+  const bar = $("statebar"), legend = $("statelegend");
+  if (!total) {
+    bar.innerHTML = "";
+    legend.innerHTML = '<span class="empty">No reviews given in this window.</span>';
+    $("statetable").innerHTML = "";
+    return;
+  }
+
+  let offset = 0;
+  bar.innerHTML = STATES.map(([state, label, variable]) => {
+    const count = m.byState[state];
+    if (!count) return "";
+    const start = offset;
+    offset += 100 * count / total;
+    return `<rect x="${start}" y="0" width="${offset - start}" height="14"` +
+           ` fill="var(${variable})"><title>${label}: ${num(count)}</title></rect>`;
+  }).join("");
+
+  legend.innerHTML = STATES.map(([state, label, variable]) =>
+    `<span><i class="swatch" style="background:var(${variable})"></i>${label} ` +
+    `${share(m.byState[state], total)}</span>`).join("");
+
+  $("statealt").textContent = `Reviews given by state, ${num(total)} in total.`;
+  $("statetable").innerHTML = tableHTML("by state", ["state", "reviews", "share"],
+    STATES.map(([state, label]) =>
+      [label, num(m.byState[state]), share(m.byState[state], total)]));
+}
+
+/* Windows --------------------------------------------------------------- */
+
+function quarterStart(to) {
+  /* Quarters begin on 1 February, 1 May, 1 August and 1 November. */
+  const at = new Date(day(to));
+  const month = at.getUTCMonth(), year = at.getUTCFullYear();
+  const starts = [1, 4, 7, 10];
+  const begins = starts.filter(m => m <= month);
+  return begins.length ? Date.UTC(year, begins[begins.length - 1], 1)
+                       : Date.UTC(year - 1, 10, 1);
+}
+
+function clamp(from, to) {
+  return [iso(Math.max(day(from), day(BOUNDS.from))),
+          iso(Math.min(day(to), day(BOUNDS.to)))];
+}
+
+function apply(from, to, pressed) {
+  [from, to] = clamp(from, to);
+  $("from").value = from;
+  $("to").value = to;
+  for (const button of document.querySelectorAll("button.preset")) {
+    button.setAttribute("aria-pressed", String(button === pressed));
+  }
+
+  const view = filterWindow(from, to);
+  const m = metrics(view);
+  renderTiles(m);
+  renderLanguages(view);
+  renderHeatmap(view, from, to);
+  renderCycle(view, from, to);
+  renderStates(m);
+
+  const dates = Math.round((day(to) - day(from)) / DAY) + 1;
+  $("subtitle").textContent =
+    `${from} to ${to} · ${dates} dates · collected ${DATA.window.generated_at}`;
+  $("footnote").textContent =
+    `Every figure is derived in the browser from ${num(
+      SECTIONS.reduce((n, s) => n + DATA[s].length, 0))} published records. ` +
+    "Changing the window does no network work.";
+}
+
+function wire() {
+  for (const button of document.querySelectorAll("button.preset")) {
+    button.addEventListener("click", () => {
+      if (button.dataset.days) {
+        const days = +button.dataset.days;
+        apply(iso(day(BOUNDS.to) - (days - 1) * DAY), BOUNDS.to, button);
+      } else if (button.dataset.span === "quarter") {
+        apply(iso(quarterStart(BOUNDS.to)), BOUNDS.to, button);
+      } else {
+        apply(`${BOUNDS.to.slice(0, 4)}-01-01`, BOUNDS.to, button);
+      }
+    });
+  }
+  for (const id of ["from", "to"]) {
+    $(id).addEventListener("change", () => {
+      if ($("from").value && $("to").value && $("from").value <= $("to").value) {
+        apply($("from").value, $("to").value, null);
+      }
+    });
+  }
+}
+
+async function start() {
+  try {
+    const [stats, colors] = await Promise.all([
+      fetch("../data/stats.json").then(r => r.ok ? r.json() : Promise.reject(r.status)),
+      fetch("../language-colors.json").then(r => r.ok ? r.json() : Promise.reject(r.status)),
+    ]);
+    DATA = stats;
+    COLORS = colors;
+    BOUNDS = {from: stats.window.from, to: stats.window.to};
+  } catch (error) {
+    $("status").textContent =
+      `Could not load ../data/stats.json or ../language-colors.json (${error}). Serve this directory ` +
+      "over HTTP rather than opening the file directly.";
+    return;
+  }
+
+  for (const id of ["from", "to"]) {
+    $(id).min = BOUNDS.from;
+    $(id).max = BOUNDS.to;
+  }
+  $("status").hidden = true;
+  $("windowbar").hidden = false;
+  $("dashboard").hidden = false;
+  wire();
+  apply(BOUNDS.from, BOUNDS.to,
+        document.querySelector('button.preset[data-days="365"]'));
+}
+
+start();
+</script>
+</body>
+</html>

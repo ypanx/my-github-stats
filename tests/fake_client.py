@@ -23,9 +23,6 @@ class FakeClient:
         self.rest_responses: list[Any] = []
         self.graphql_calls: list[tuple[str, dict[str, Any]]] = []
         self.rest_calls_made: list[tuple[str, dict[str, Any] | None]] = []
-        self.graphql_points = 0
-        self.rest_calls = 0
-        self.retries = 0
 
     def queue_graphql(self, label_prefix: str, *responses: Any) -> None:
         self.graphql_responses.setdefault(label_prefix, []).extend(responses)
@@ -43,13 +40,9 @@ class FakeClient:
     def rest(self, path: str, params: dict[str, Any] | None = None,
              label: str = "") -> Any:
         self.rest_calls_made.append((path, params))
-        self.rest_calls += 1
         if not self.rest_responses:
             raise AssertionError(f"no queued response for {path!r}")
         return self.rest_responses.pop(0)
-
-    def budget(self) -> str:
-        return "fake"
 
 
 def viewer_response(login: str = "someone") -> dict:

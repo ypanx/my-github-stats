@@ -1,4 +1,15 @@
-"""Shared fixtures. Every test here is offline and touches no network."""
+"""Shared fixtures. Every test here is offline and touches no network.
+
+One test file per implementation file:
+
+    test_client.py     client.py
+    test_queries.py    queries.py
+    test_collect.py    collect.py
+    test_utils.py      utils.py
+    test_cards.py      cards.py
+
+`constants.py` holds no logic, so nothing tests it directly.
+"""
 
 from __future__ import annotations
 
@@ -9,7 +20,8 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from collector import policy as policy_module  # noqa: E402
+import utils  # noqa: E402
+from utils import Policy  # noqa: E402
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -21,9 +33,27 @@ def committed_policy():
     The cache is cleared afterwards so that a test installing its own policy
     cannot influence any later one.
     """
-    policy_module.set_policy(policy_module.load_policy())
+    utils.set_policy(utils.load_policy())
     yield
-    policy_module.set_policy(None)
+    utils.set_policy(None)
+
+
+@pytest.fixture
+def make_policy():
+    """Build a synthetic set of tables, for rules the committed file cannot express.
+
+    The committed tables deliberately hold no contradictions, so the order between
+    two rules that only disagree on a contradictory row can only be tested against
+    an installed policy.
+    """
+    def build(**overrides) -> Policy:
+        fields = {
+            "include_extensions": {}, "include_filenames": {},
+            "exclude_extensions": frozenset(), "exclude_filenames": frozenset(),
+            "exclude_directories": frozenset(), "exclude_globs": (),
+        }
+        return Policy(**{**fields, **overrides})
+    return build
 
 
 @pytest.fixture

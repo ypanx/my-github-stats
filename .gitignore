@@ -4,9 +4,6 @@
 .idea/
 .vscode/
 
-# Planning notes
-plan/
-
 # Python
 .pytest_cache/
 .venv/

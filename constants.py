@@ -9,13 +9,21 @@ from __future__ import annotations
 
 from pathlib import Path
 
-DATA_DIR = Path("data")
+ROOT = Path(__file__).resolve().parent
+DATA_DIR = ROOT / "data"
 
 #: Aggregated and safe to publish.
 STATS_PATH = DATA_DIR / "stats.json"
 
 #: The same records with repository attribution added. Never committed.
 LOCAL_PATH = DATA_DIR / "stats.local.json"
+
+#: The two rendered cards, committed and served over raw.githubusercontent.com.
+CARDS_DIR = ROOT / "cards"
+
+#: Which files count as which language, and the colour of each segment.
+LANGUAGES_PATH = ROOT / "languages.yml"
+COLORS_PATH = ROOT / "language-colors.json"
 
 # --------------------------------------------------------------------------- #
 # API limits
@@ -63,10 +71,10 @@ REVIEW_PAGE = 30
 REST_WORKERS = 6
 
 # --------------------------------------------------------------------------- #
-# Guard thresholds
+# Thresholds for the two checks
 # --------------------------------------------------------------------------- #
 
-#: The day-over-day guard exists to catch a collapse, not drift. When
+#: The day-over-day check exists to catch a collapse, not drift. When
 #: authorization to an organization lapses, the API returns a successful response
 #: carrying almost no data — a fall of well over ninety percent. A bound at half
 #: catches that with room to spare while staying impossible for a rolling window
@@ -78,20 +86,6 @@ MAX_DROP = 0.50
 #: rather than given individual thresholds.
 MIN_COMPARABLE = 50
 
-#: The share of a repository's own credited contributions below which the number
-#: of commits actually walked is implausible. Two effects legitimately widen that
-#: gap: a co-authored commit credits every author while history returns only the
-#: primary one, and contributions are bucketed in the account's own timezone
-#: rather than in UTC, which shifts commits across the window edges. Both scale
-#: with volume, so the bound is a proportion rather than a count.
-MIN_WALKED_SHARE = 0.5
-
-#: Tolerated shortfall between per-file line counts and the totals a commit
-#: reports for itself. GitHub occasionally declines to produce a diff for a file
-#: while still counting its lines at the commit level. That cannot be recovered,
-#: so it is measured and bounded rather than fixed.
-MAX_SHORTFALL = 0.005
-
 # --------------------------------------------------------------------------- #
 # Published shape
 # --------------------------------------------------------------------------- #
@@ -100,7 +94,8 @@ MAX_SHORTFALL = 0.005
 #: visible only to its author, and is excluded everywhere.
 REVIEW_STATES = ("APPROVED", "COMMENTED", "CHANGES_REQUESTED", "DISMISSED")
 
-#: The sections of both output files, in order.
+#: The sections of both output files. An iteration order, not the order the files
+#: are written in: `write_atomic` sorts keys, so both files are alphabetical.
 #:
 #: Every section holds individual records dated by UTC day, and none holds a
 #: per-date or per-period summary. Any such view is derived by whatever reads the
@@ -112,3 +107,14 @@ REVIEW_STATES = ("APPROVED", "COMMENTED", "CHANGES_REQUESTED", "DISMISSED")
 #: length is therefore not the number of reviews given, and the deliberately
 #: awkward name exists to stop a reader reaching for the obvious and being wrong.
 SECTIONS = ("commits", "prs", "review_envelopes", "comments")
+
+
+#: Exactly what each section publishes. `strip_attribution` keeps these and drops
+#: everything else, so a field added to a record during collection is withheld
+#: until it is named here. The reverse — a deny-list — fails open.
+PUBLISHED_FIELDS = {
+    "commits": ("date", "languages"),
+    "prs": ("created", "merged", "state", "cycle_hours"),
+    "review_envelopes": ("date", "state", "inline_count", "has_body", "on_own_pr"),
+    "comments": ("date", "kind", "on_own_pr"),
+}

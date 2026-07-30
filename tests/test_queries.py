@@ -7,12 +7,14 @@ range still returns most of what it should.
 
 from __future__ import annotations
 
+import re
+
 import datetime as dt
 
 import pytest
 
-from collector import queries
-from collector.windows import created_partitions
+import queries
+from utils import created_partitions
 
 D = dt.date
 SINCE, UNTIL = D(2025, 7, 30), D(2026, 7, 29)
@@ -34,12 +36,23 @@ class TestAccountWide:
             assert "repo:" not in query, query
 
     def test_no_query_document_hardcodes_an_account_or_repository(self):
-        """The account is resolved at runtime, so no committed file names it."""
+        """The account is resolved at runtime, so no committed file names it.
+
+        Asserted as "every qualifier takes a variable" rather than "no qualifier is
+        hardcoded". The weaker form passed for a document with no qualifier at all,
+        which is most of them, so it would not have caught `author:someone`.
+        """
         documents = [queries.VIEWER, queries.CONTRIBUTIONS, queries.COMMIT_HISTORY,
                      queries.AUTHORED_PULL_REQUESTS, queries.REVIEWED_PULL_REQUESTS,
                      queries.COMMENTED_PULL_REQUESTS, queries.COMMENT_PAGE]
+        # Excludes `$owner: String!`, which is a variable declaration rather than a
+        # value being supplied to a field.
+        qualifier = re.compile(
+            r"(?<!\$)\b(owner|name|author|repo|login|commenter|reviewed-by)"
+            r"\s*:\s*(\S+)")
         for document in documents:
-            assert "owner:" not in document or "$owner" in document
+            for field, value in qualifier.findall(document):
+                assert value.startswith(("$", "{")), f"{field}: {value}"
 
 
 class TestUpdateBound:

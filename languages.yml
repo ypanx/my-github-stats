@@ -1,0 +1,198 @@
+# Which files count towards the language breakdown, and what each is called.
+#
+# Resolution order, which is part of the contract:
+#
+#   1. exclude_directories   any whole path component
+#   2. exclude_globs         basename, shell globbing
+#   3. exclude_filenames     basename, exact
+#   4. exclude_extensions    final dot-suffix, lower-cased
+#   5. include_filenames     basename, exact
+#   6. include_extensions    final dot-suffix, lower-cased
+#   7. otherwise             unclassifiable
+include_extensions:
+  bash: Shell
+  bats: Shell
+  bazel: Bazel
+  bzl: Bazel
+  c: C
+  cc: C++
+  cfg: INI
+  cjs: JavaScript
+  cpp: C++
+  cs: C#
+  css: CSS
+  go: Go
+  gql: GraphQL
+  graphql: GraphQL
+  groovy: Groovy
+  h: C
+  hcl: HCL
+  hpp: C++
+  html: HTML
+  ini: INI
+  ipynb: Jupyter Notebook
+  j2: Jinja
+  java: Java
+  jinja: Jinja
+  jinja2: Jinja
+  js: JavaScript
+  jsx: JavaScript
+  kt: Kotlin
+  markdown: Markdown
+  md: Markdown
+  mjs: JavaScript
+  mk: Makefile
+  php: PHP
+  proto: Protocol Buffers
+  py: Python
+  pyi: Python
+  rb: Ruby
+  rs: Rust
+  rst: reStructuredText
+  scss: SCSS
+  sh: Shell
+  sql: SQL
+  swift: Swift
+  tf: Terraform
+  tftpl: Terraform
+  tfvars: Terraform
+  toml: TOML
+  ts: TypeScript
+  tsx: TypeScript
+  txt: Text
+  yaml: YAML
+  yml: YAML
+  zsh: Shell
+
+# Files whose name is the whole identification.
+include_filenames:
+  .bazelrc: Bazel
+  .bazelversion: Text
+  .coveragerc: INI
+  .editorconfig: INI
+  .flake8: INI
+  .pylintrc: INI
+  .python-version: Text
+  .tool-versions: Text
+  .yamllint: YAML
+  AUTHORS: Text
+  BUILD: Bazel
+  CHANGELOG: Text
+  CODEOWNERS: Text
+  CONTRIBUTING: Text
+  Containerfile: Dockerfile
+  Dockerfile: Dockerfile
+  GNUmakefile: Makefile
+  Jenkinsfile: Groovy
+  MAINTAINERS: Text
+  Makefile: Makefile
+  NOTICE: Text
+  README: Text
+  WORKSPACE: Bazel
+
+# Recognized, and not authored work.
+exclude_extensions:
+  - a
+  - avro
+  - bin
+  - bmp
+  - bz2
+  - class
+  - csv
+  - dat
+  - db
+  - dll
+  - dylib
+  - eot
+  - exe
+  - gif
+  - gz
+  - ico
+  - jar
+  - jpeg
+  - jpg
+  - json
+  - jsonl
+  - lock
+  - log
+  - map
+  - mov
+  - mp3
+  - mp4
+  - ndjson
+  - npy
+  - npz
+  - o
+  - otf
+  - parquet
+  - pb
+  - pdf
+  - pkl
+  - plist
+  - png
+  - pyc
+  - pyo
+  - so
+  - sqlite
+  - sqlite3
+  - svg
+  - tar
+  - tiff
+  - tsv
+  - ttf
+  - wav
+  - webp
+  - whl
+  - woff
+  - woff2
+  - xml
+  - xz
+  - zip
+
+exclude_filenames:
+  - .dockerignore
+  - .env
+  - .gitattributes
+  - .gitignore
+  - .gitkeep
+  - .gitmodules
+  - .npmignore
+  - .terraform.lock.hcl
+  - CODE_OF_CONDUCT.md
+  - go.mod
+  - go.sum
+
+# Generated or vendored rather than written. Matched against any whole path
+# component, so `vendor` catches `a/b/vendor/c.go` and `my_vendor_lib` does not
+# match.
+exclude_directories:
+  - .terraform
+  - .venv
+  - LICENSES
+  - __pycache__
+  - coverage
+  - dist
+  - licenses
+  - node_modules
+  - third_party
+  - vendor
+
+# Matched against the basename with shell globbing.
+exclude_globs:
+  - "*.gen.go"
+  - "*.js.map"
+  - "*.min.css"
+  - "*.min.js"
+  - "*.pb.cc"
+  - "*.pb.go"
+  - "*.pb.gw.go"
+  - "*.pb.h"
+  - "*_generated.go"
+  - "*_pb2.py"
+  - "*_pb2.pyi"
+  - "*_pb2_grpc.py"
+  - "*_pb2_grpc.pyi"
+  - "COPYING*"
+  - "LICENCE*"
+  - "LICENSE*"
+

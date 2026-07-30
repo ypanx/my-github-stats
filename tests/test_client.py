@@ -1,8 +1,9 @@
 """The HTTP client, exercised without a network.
 
-Only the decisions the client makes on its own are tested here: which failures
-are worth retrying, how long to wait, and how it reads a token. Everything else
-it does is delegate to the transport.
+The decisions the client makes on its own: which failures are worth retrying, how
+long to wait, how it reads a token, and what it is willing to put in an error
+message. The transport itself is faked by installing a session on the thread-local
+slot the client reads.
 """
 
 from __future__ import annotations
@@ -10,7 +11,7 @@ from __future__ import annotations
 import pytest
 
 from client import GitHubError, token_from_environment
-from client.client import (
+from client import (
     MAX_BACKOFF_SECONDS,
     RETRY_STATUSES,
     RETRYABLE_ERROR_TYPES,
@@ -18,9 +19,33 @@ from client.client import (
 )
 
 
+HASH = "a5275c6d4c8f1e2b3a4d5e6f7a8b9c0d1e2f3a4b"
+
+
 class FakeResponse:
-    def __init__(self, headers=None):
+    def __init__(self, headers=None, status_code=200, text="", payload=None):
         self.headers = headers or {}
+        self.status_code = status_code
+        self.text = text
+        self._payload = payload
+
+    def json(self):
+        return self._payload
+
+
+def with_session(client: GitHubClient, response: FakeResponse) -> GitHubClient:
+    """Install a transport that answers everything with one response."""
+    class Session:
+        headers: dict = {}
+
+        def get(self, *a, **k):
+            return response
+
+        def post(self, *a, **k):
+            return response
+
+    client._local.session = Session()
+    return client
 
 
 class TestToken:
@@ -68,7 +93,7 @@ class TestRetryPolicy:
 class TestBackoff:
     def test_it_grows_with_each_attempt(self, monkeypatch):
         slept: list[float] = []
-        monkeypatch.setattr("client.client.time.sleep", slept.append)
+        monkeypatch.setattr("client.time.sleep", slept.append)
         client = GitHubClient("token")
         for attempt in range(4):
             client._back_off(attempt, None)
@@ -77,48 +102,33 @@ class TestBackoff:
 
     def test_it_is_capped(self, monkeypatch):
         slept: list[float] = []
-        monkeypatch.setattr("client.client.time.sleep", slept.append)
-        GitHubClient("token")._back_off(20, None)
+        monkeypatch.setattr("client.time.sleep", slept.append)
+        GitHubClient("token", attempts=30)._back_off(20, None)
         assert slept == [MAX_BACKOFF_SECONDS]
+
+    def test_the_last_attempt_does_not_wait(self, monkeypatch):
+        """There is nothing left to wait for. Sleeping here cost up to a minute per
+        failing commit, multiplied across the parallel file fetch."""
+        slept: list[float] = []
+        monkeypatch.setattr("client.time.sleep", slept.append)
+        client = GitHubClient("token", attempts=3)
+        client._back_off(2, None)
+        assert slept == []
 
     def test_the_servers_own_advice_is_preferred(self, monkeypatch):
         slept: list[float] = []
-        monkeypatch.setattr("client.client.time.sleep", slept.append)
+        monkeypatch.setattr("client.time.sleep", slept.append)
         GitHubClient("token")._back_off(0, FakeResponse({"Retry-After": "30"}))
         assert slept == [30]
 
     def test_an_exhausted_rate_limit_waits_for_its_reset(self, monkeypatch):
         slept: list[float] = []
-        monkeypatch.setattr("client.client.time.sleep", slept.append)
-        monkeypatch.setattr("client.client.time.time", lambda: 1000)
+        monkeypatch.setattr("client.time.sleep", slept.append)
+        monkeypatch.setattr("client.time.time", lambda: 1000)
         GitHubClient("token")._back_off(0, FakeResponse(
             {"X-RateLimit-Remaining": "0", "X-RateLimit-Reset": "1045"}))
         assert slept == [46]
 
-    def test_every_wait_is_counted(self, monkeypatch):
-        monkeypatch.setattr("client.client.time.sleep", lambda _: None)
-        client = GitHubClient("token")
-        for attempt in range(3):
-            client._back_off(attempt, None)
-        assert client.retries == 3
-
-
-class TestAccounting:
-    def test_a_reported_cost_is_accumulated(self):
-        client = GitHubClient("token")
-        client._record_cost({"rateLimit": {"cost": 35}})
-        client._record_cost({"rateLimit": {"cost": 7}})
-        assert client.graphql_points == 42
-
-    def test_an_unreported_cost_counts_as_one(self):
-        client = GitHubClient("token")
-        client._record_cost({})
-        assert client.graphql_points == 1
-
-    def test_the_budget_reads_as_a_sentence(self):
-        client = GitHubClient("token")
-        client._record_cost({"rateLimit": {"cost": 5}})
-        assert "GraphQL points" in client.budget()
 
 
 class TestSession:
@@ -132,3 +142,46 @@ class TestSession:
         """A new session per request would discard connection pooling."""
         client = GitHubClient("token")
         assert client.session is client.session
+
+
+class TestErrorMessagesAreSafeForAPublicLog:
+    """Every message raised from here can reach a permanent public workflow log.
+    Response bodies were once the one path that skipped the scrub."""
+
+    def test_a_rest_error_body_is_scrubbed(self):
+        client = with_session(GitHubClient("token"), FakeResponse(
+            status_code=422,
+            text='{"message":"No commit found for SHA: ' + HASH + '"}'))
+        with pytest.raises(GitHubError) as caught:
+            client.rest("/repos/acme-corp/secret/commits/" + HASH, label="commit files")
+        message = str(caught.value)
+        assert HASH not in message
+        assert "secret" not in message
+        assert "422" in message
+
+    def test_a_graphql_error_body_is_scrubbed(self):
+        # 422 rather than 500, so this raises on the first attempt instead of
+        # spending the retry schedule to reach the same message.
+        client = with_session(GitHubClient("token"), FakeResponse(
+            status_code=422, text="acme-corp/secret exploded at " + HASH))
+        with pytest.raises(GitHubError) as caught:
+            client.graphql("query {}", {}, "contributions")
+        message = str(caught.value)
+        assert HASH not in message
+        assert "secret" not in message
+
+    def test_a_rest_path_never_reaches_the_message(self):
+        client = with_session(GitHubClient("token"),
+                             FakeResponse(status_code=404, text="Not Found"))
+        with pytest.raises(GitHubError) as caught:
+            client.rest("/repos/acme-corp/secret/commits/abc", label="commit files")
+        assert "acme-corp" not in str(caught.value)
+
+    def test_giving_up_names_what_it_gave_up_on(self, monkeypatch):
+        """`gave up after 5 attempts` alone is the least diagnosable message the
+        module can produce."""
+        monkeypatch.setattr("client.time.sleep", lambda _: None)
+        client = with_session(GitHubClient("token", attempts=2),
+                             FakeResponse(status_code=503, text=""))
+        with pytest.raises(GitHubError, match="gave up after 2 attempts, last HTTP 503"):
+            client.rest("/repos/a/b/commits/c", label="commit files")

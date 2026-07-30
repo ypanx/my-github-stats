@@ -10,19 +10,22 @@ counted as reviews. Those are exactly the mistakes no total would reveal.
 from __future__ import annotations
 
 import datetime as dt
+import json
 
 import pytest
 
-from collector.collector import Collector
-from collector.constants import (
+from client import scrub
+from collect import Collector, is_merge_commit
+from constants import (
     MAX_REPOSITORIES,
     REST_FILE_CEILING,
     REST_FILE_PAGE,
     REVIEW_PAGE,
     SEARCH_CAP,
 )
-from collector.errors import CollectError
+from utils import CollectError
 
+from conftest import FIXTURES
 from fake_client import (
     FakeClient,
     comment,
@@ -256,6 +259,15 @@ class TestFetchAllFiles:
         assert "secret-service" not in message
         assert "a5275c6d4c8f1e2b3a4d5e6f7a8b9c0d1e2f3a4b" not in message
 
+    def test_a_bare_hash_in_an_error_body_is_trimmed_too(self):
+        """The realistic shape, and the one the previous test does not reach: a 422
+        body naming the commit. A bare hash has no slash, so the repository rules
+        do not touch it and only the hash rule can."""
+        message = scrub('{"message":"No commit found for SHA: '
+                        'a5275c6d4c8f1e2b3a4d5e6f7a8b9c0d1e2f3a4b"}')
+        assert "a5275c6d4c8f1e2b3a4d5e6f7a8b9c0d1e2f3a4b" not in message
+        assert "a5275c6d" in message
+
     def test_a_commit_above_the_ceiling_warns_instead_of_failing(self):
         """No further pages exist to fetch, so failing would block every run until
         the commit left the window a year later."""
@@ -278,6 +290,15 @@ class TestSearch:
             search_response([{"number": 2}], matches=2))
         nodes = make_collector(client).search("query", "q", "search")
         assert len(nodes) == 2
+
+    def test_a_result_set_exactly_at_the_cap_is_read(self):
+        """`PAGE_SIZE` divides `SEARCH_CAP` exactly, so the thousandth result is the
+        last of a full page and is reachable. Refusing at the boundary would block a
+        run whose results were entirely readable."""
+        client = FakeClient()
+        nodes = [{"number": n} for n in range(SEARCH_CAP)]
+        client.queue_graphql("search", search_response(nodes, matches=SEARCH_CAP))
+        assert len(make_collector(client).search("query", "q", "search")) == SEARCH_CAP
 
     def test_more_matches_than_can_be_read_is_refused(self):
         """The match count is not subject to the cap even though the results are,
@@ -506,3 +527,29 @@ class TestVerbosity:
         collector.viewer = {"login": ME, "id": "x"}
         collector.walk_commits([{"name_with_owner": "acme-corp/secret", "contributions": 1}])
         assert any("secret" in line for line in lines)
+
+
+def fixture_commits() -> list[dict]:
+    return json.loads((FIXTURES / "merge_commits.json").read_text())["commits"]
+
+
+class TestMergeFilter:
+    def test_the_fixture_contains_both_kinds(self):
+        commits = fixture_commits()
+        assert any(c["expect_merge"] for c in commits)
+        assert any(not c["expect_merge"] for c in commits)
+
+    def test_every_recorded_commit_is_identified_correctly(self):
+        for commit in fixture_commits():
+            assert is_merge_commit(commit) is commit["expect_merge"], commit["oid"][:10]
+
+    def test_a_commit_without_parent_information_is_an_error(self):
+        """Treating it as a non-merge would silently include it."""
+        with pytest.raises(CollectError, match="parent"):
+            is_merge_commit({"oid": "abc123"})
+        with pytest.raises(CollectError):
+            is_merge_commit({"oid": "abc123", "parents": {}})
+
+    @pytest.mark.parametrize("count,expected", [(1, False), (2, True), (3, True)])
+    def test_more_than_one_parent_makes_a_merge(self, count, expected):
+        assert is_merge_commit({"oid": "x", "parents": {"totalCount": count}}) is expected

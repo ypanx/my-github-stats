@@ -1,8 +1,8 @@
 """A small GitHub GraphQL and REST client.
 
-The client knows nothing about the statistics being collected. It owns exactly
-three concerns: authentication, retrying transient failures, and counting what
-each run costs. Everything above it works in terms of queries and records.
+The client knows nothing about the statistics being collected. It owns two
+concerns: authentication, and retrying transient failures. Everything above it
+works in terms of queries and records.
 """
 
 from __future__ import annotations
@@ -43,18 +43,31 @@ class GitHubError(Exception):
     """A request failed, or failed to stop failing after every retry."""
 
 
-def _scrub(text: str) -> str:
-    """Strip repository paths out of a message before it is raised.
-
-    A transport failure quotes the request URL and a GraphQL failure can quote a
-    repository name, and both end up in logs that may be public.
-    """
-    text = _REPO_PATH.sub("/repos/<repository>", text)
-    return _OWNER_NAME.sub("<repository>", text)
-
+#: A commit hash at any length. Trimmed rather than removed: a prefix is enough to
+#: look a commit up locally, and the whole hash resolves one through GitHub search.
+SHORT_HASH_LENGTH = 8
 
 _REPO_PATH = re.compile(r"/repos/[^/\s]+/[^/\s?]+")
 _OWNER_NAME = re.compile(r"\b[\w.-]+/[\w.-]+\b")
+_HASH = re.compile(r"\b[0-9a-f]{7,40}\b")
+
+
+def scrub(text: str) -> str:
+    """Remove identifying detail from a message before it is raised.
+
+    Everything raised from here can reach a public, permanent workflow log. A
+    transport failure quotes the request URL, an error body quotes the repository
+    and the commit it was asked about, and a GraphQL error can quote a repository
+    name. This is the only copy; `collect` imports it rather than keeping a second.
+    """
+    text = _REPO_PATH.sub("/repos/<repository>", text)
+    text = _OWNER_NAME.sub("<repository>", text)
+    return _HASH.sub(lambda match: match.group()[:SHORT_HASH_LENGTH], text)
+
+
+def short_hash(oid: str | None) -> str:
+    """A commit hash trimmed to a prefix that is not the whole thing."""
+    return (oid or "unknown")[:SHORT_HASH_LENGTH]
 
 
 def token_from_environment() -> str:
@@ -75,7 +88,7 @@ def token_from_environment() -> str:
 
 
 class GitHubClient:
-    """Authenticated client with retry, backoff, and cost accounting.
+    """Authenticated client with retry and backoff.
 
     Sessions are thread-local because `requests.Session` is not documented as
     thread safe and the per-commit file fetch runs several workers in parallel.
@@ -87,10 +100,6 @@ class GitHubClient:
         self._attempts = attempts
         self._user_agent = user_agent
         self._local = threading.local()
-        self._lock = threading.Lock()
-        self.graphql_points = 0
-        self.rest_calls = 0
-        self.retries = 0
 
     @property
     def session(self) -> requests.Session:
@@ -107,11 +116,8 @@ class GitHubClient:
         return session
 
     def graphql(self, query: str, variables: dict[str, Any], label: str) -> dict[str, Any]:
-        """Run one GraphQL query and return its `data` object.
-
-        A query that selects `rateLimit { cost }` has its cost added to the
-        running total, which is what makes the budget report meaningful.
-        """
+        """Run one GraphQL query and return its `data` object."""
+        last = "no response"
         for attempt in range(self._attempts):
             try:
                 response = self.session.post(
@@ -121,42 +127,45 @@ class GitHubClient:
                 )
             except TRANSPORT_ERRORS as error:
                 if attempt + 1 == self._attempts:
-                    raise GitHubError(f"{label}: {_scrub(str(error))}") from error
+                    raise GitHubError(f"{label}: {scrub(str(error))}") from error
                 self._back_off(attempt, None)
                 continue
             if response.status_code in RETRY_STATUSES:
+                last = f"HTTP {response.status_code}"
                 self._back_off(attempt, response)
                 continue
             if response.status_code != 200:
-                raise GitHubError(
-                    f"{label}: HTTP {response.status_code}: {response.text[:400]}")
+                raise GitHubError(f"{label}: HTTP {response.status_code}: "
+                                  f"{scrub(response.text[:400])}")
 
             payload = response.json()
             if errors := payload.get("errors") or []:
                 types = {error.get("type", "") for error in errors}
                 if types & RETRYABLE_ERROR_TYPES and attempt + 1 < self._attempts:
+                    last = "; ".join(sorted(types))
                     self._back_off(attempt, response)
                     continue
                 detail = "; ".join(
-                    f"{error.get('type', 'unknown')}: {_scrub(str(error.get('message')))}"
+                    f"{error.get('type', 'unknown')}: {scrub(str(error.get('message')))}"
                     for error in errors)
                 raise GitHubError(f"{label}: {detail}")
 
             data = payload.get("data")
             if data is None:
                 raise GitHubError(f"{label}: response contained no data")
-            self._record_cost(data)
             return data
 
-        raise GitHubError(f"{label}: gave up after {self._attempts} attempts")
+        raise GitHubError(f"{label}: gave up after {self._attempts} attempts, "
+                          f"last {last}")
 
     def rest(self, path: str, params: dict[str, Any] | None = None,
              label: str = "") -> Any:
         """Run one REST GET and return its decoded body.
 
-        The path is deliberately kept out of error messages, because it carries
-        the repository owner and name and these messages reach public build logs.
+        The path never reaches an error message, and every message that could quote
+        one goes through `scrub`, because these reach public build logs.
         """
+        last = "no response"
         for attempt in range(self._attempts):
             try:
                 response = self.session.get(f"{API_ROOT}{path}", params=params,
@@ -164,32 +173,21 @@ class GitHubClient:
             except TRANSPORT_ERRORS as error:
                 if attempt + 1 == self._attempts:
                     raise GitHubError(
-                        f"{label or 'request'}: {_scrub(str(error))}") from error
+                        f"{label or 'request'}: {scrub(str(error))}") from error
                 self._back_off(attempt, None)
                 continue
-            with self._lock:
-                self.rest_calls += 1
             if response.status_code in RETRY_STATUSES:
+                last = f"HTTP {response.status_code}"
                 self._back_off(attempt, response)
                 continue
             if response.status_code != 200:
-                raise GitHubError(
-                    f"{label or 'request'}: HTTP {response.status_code}: "
-                    f"{response.text[:200]}")
+                raise GitHubError(f"{label or 'request'}: HTTP "
+                                  f"{response.status_code}: "
+                                  f"{scrub(response.text[:200])}")
             return response.json()
 
-        raise GitHubError(f"{label or 'request'}: gave up after {self._attempts} attempts")
-
-    def budget(self) -> str:
-        """One line describing what this run has cost so far."""
-        return (f"{self.graphql_points} GraphQL points, {self.rest_calls} REST "
-                f"requests, {self.retries} retries")
-
-    def _record_cost(self, data: dict[str, Any]) -> None:
-        rate_limit = data.get("rateLimit") if isinstance(data, dict) else None
-        cost = (rate_limit or {}).get("cost") if isinstance(rate_limit, dict) else None
-        with self._lock:
-            self.graphql_points += int(cost or 1)
+        raise GitHubError(f"{label or 'request'}: gave up after "
+                          f"{self._attempts} attempts, last {last}")
 
     def _back_off(self, attempt: int, response: requests.Response | None) -> None:
         """Sleep before retrying, preferring the server's own advice.
@@ -197,7 +195,12 @@ class GitHubClient:
         `Retry-After` is honoured when present. Failing that, an exhausted rate
         limit carries a reset timestamp worth waiting for. Otherwise the delay
         doubles per attempt up to a ceiling.
+
+        Returns immediately on the last attempt, where there is nothing left to
+        wait for. Sleeping there once cost a minute per failing commit.
         """
+        if attempt + 1 >= self._attempts:
+            return
         delay = min(2 ** attempt, MAX_BACKOFF_SECONDS)
         if response is not None:
             retry_after = response.headers.get("Retry-After")
@@ -207,6 +210,4 @@ class GitHubClient:
                 reset = response.headers.get("X-RateLimit-Reset")
                 if reset and reset.isdigit():
                     delay = max(delay, int(reset) - int(time.time()) + 1)
-        with self._lock:
-            self.retries += 1
         time.sleep(max(delay, 1))
