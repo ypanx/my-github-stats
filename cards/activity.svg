@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="200"
-     viewBox="0 0 480 200" role="img" aria-label="John Pan: 597 pull requests opened, 467 commits, 249,078 lines changed, 903 reviews given, between 2025-07-31 and 2026-07-30.">
-  <title>John Pan: 597 pull requests opened, 467 commits, 249,078 lines changed, 903 reviews given, between 2025-07-31 and 2026-07-30.</title>
+     viewBox="0 0 480 200" role="img" aria-label="John Pan: 601 pull requests opened, 474 commits, 254,615 lines changed, 903 reviews given, between 2025-07-31 and 2026-07-30.">
+  <title>John Pan: 601 pull requests opened, 474 commits, 254,615 lines changed, 903 reviews given, between 2025-07-31 and 2026-07-30.</title>
 
   <!-- Base styles are dark and a light-preference query overrides them, so a
        viewer expressing no preference, or a renderer ignoring the query, gets
@@ -65,16 +65,16 @@
 
   <use href="#icon-opened" x="20" y="76"/>
   <text class="label" x="42" y="86">opened</text>
-  <text class="value" x="222" y="86" text-anchor="end">597</text>
+  <text class="value" x="222" y="86" text-anchor="end">601</text>
   <use href="#icon-merged" x="20" y="99"/>
   <text class="label" x="56" y="109">merged</text>
-  <text class="value" x="222" y="109" text-anchor="end">467</text>
+  <text class="value" x="222" y="109" text-anchor="end">471</text>
   <use href="#icon-commits" x="20" y="122"/>
   <text class="label" x="42" y="132">commits</text>
-  <text class="value" x="222" y="132" text-anchor="end">467</text>
+  <text class="value" x="222" y="132" text-anchor="end">474</text>
   <use href="#icon-lines" x="20" y="145"/>
   <text class="label" x="42" y="155">lines</text>
-  <text class="value" x="222" y="155" text-anchor="end">249,078</text>
+  <text class="value" x="222" y="155" text-anchor="end">254,615</text>
   <use href="#icon-cycle" x="20" y="168"/>
   <text class="label" x="42" y="178">to merge</text>
   <text class="value" x="222" y="178" text-anchor="end">10.1h</text>
