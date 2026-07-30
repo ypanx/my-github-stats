@@ -6,15 +6,9 @@ name: collect
 
 on:
   schedule:
-    # Daily, well after midnight UTC so the trailing window covers whole days.
-    # GitHub disables a schedule after roughly sixty days of repository
-    # inactivity, so a run that fails and commits nothing for that long stops
-    # running at all rather than staying broken loudly.
     - cron: "0 6 * * *"
   workflow_dispatch:
 
-# One run at a time. Two overlapping runs would each collect a window and race to
-# commit, and the loser's figures would be silently discarded.
 concurrency:
   group: collect
   cancel-in-progress: false
@@ -36,8 +30,6 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      # Never `--verbose`. Build logs on a public repository are public and
-      # permanent, and nothing downstream can reach them to clean up.
       - name: Collect the trailing year
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
@@ -46,31 +38,16 @@ jobs:
       - name: Render the cards
         run: python cards.py
 
-      # After rendering, because one test compares the committed cards against a
-      # fresh render and so is what catches a stale card being published.
       - name: Tests
         run: python -m pytest -q
 
       - name: Commit
         run: |
-          # Committed as the bot, never as the account. This repository sits inside
-          # the account's own contributions, so these commits are walked by the
-          # collector like any others. The window rolls daily, so the output
-          # changes every day whether or not anything happened, which would add
-          # roughly 365 commits a year as a permanent floor and inflate the commit
-          # count by about 78%. Both checks would still pass: the totals stay
-          # positive and a steady daily rise is not a drop.
-          #
-          # What matters is that the address is not linked to the account. Do not
-          # use github.actor, which resolves to the account itself on both
-          # scheduled and dispatched runs.
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add data/stats.json cards/
 
-          # Tolerated defensively rather than expected: for the reason above there
-          # are no quiet days, so an empty diff means something upstream changed.
           if git diff --cached --quiet; then
             echo "nothing changed, so nothing was committed"
             exit 0
