@@ -1,20 +1,20 @@
-# Local design doc — contains internal repo names, per-repo volumes and tooling
-# details that Section 2.6 keeps off the published surface. Never commit.
-plan.md
+# Editors, tooling, and operating system noise
+.claude/
+.DS_Store
+.idea/
+.vscode/
 
-# Outputs that carry attribution (Section 2.6 / Phase 2)
-stats.local.json          # repo-attributed event records
-paths_fixture.json        # real file paths from commit history
-probe_out/                # raw API dumps from Phase 1
+# Python
+.pytest_cache/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Repository attribution, which must never be committed
+stats.local.json*
 
 # Secrets
 .env
 
-# Python
-.venv/
-__pycache__/
-*.py[cod]
-.pytest_cache/
-
-# Editor
-.vscode/
+# Temporaries from the atomic write
+*.tmp

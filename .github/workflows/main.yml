@@ -1,0 +1,56 @@
+# Collect, check, render, commit. Nothing is published unless every step passes.
+#
+# Collection writes nothing unless its own checks pass, and the commit step is last
+# so that a failure anywhere above it leaves the previous output in place.
+name: collect
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Collect the trailing year
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: python collect.py --horizon 365
+
+      - name: Render the cards
+        run: python cards.py
+
+      - name: Tests
+        run: python -m pytest -q
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/stats.json cards/
+
+          if git diff --cached --quiet; then
+            echo "nothing changed, so nothing was committed"
+            exit 0
+          fi
+          git commit -m "Update statistics for $(date -u +%Y-%m-%d)"
+          git push

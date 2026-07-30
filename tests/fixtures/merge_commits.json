@@ -1,0 +1,93 @@
+{
+  "comment": "Commits from public repositories, recorded so the merge-commit filter can be tested offline. The account being measured has no merge commits at all, so a live run cannot tell a working filter from a missing one; only this fixture can. Nothing here is private.",
+  "commits": [
+    {
+      "repo": "pallets/flask",
+      "oid": "9fcd34c9f3065640bd1cd86234216ca068633fb9",
+      "additions": 1,
+      "deletions": 2,
+      "changed_files": 1,
+      "parents": {
+        "totalCount": 2
+      },
+      "expect_merge": true
+    },
+    {
+      "repo": "pallets/flask",
+      "oid": "dcbede0cb00df32e7f1895e19e37d5f40a75d1f6",
+      "additions": 6,
+      "deletions": 1,
+      "changed_files": 2,
+      "parents": {
+        "totalCount": 2
+      },
+      "expect_merge": true
+    },
+    {
+      "repo": "pallets/flask",
+      "oid": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81",
+      "additions": 1,
+      "deletions": 1,
+      "changed_files": 1,
+      "parents": {
+        "totalCount": 1
+      },
+      "expect_merge": false
+    },
+    {
+      "repo": "pallets/flask",
+      "oid": "954f5684e4841aad84a8eec7ace7b81a0d3f6831",
+      "additions": 441,
+      "deletions": 383,
+      "changed_files": 3,
+      "parents": {
+        "totalCount": 1
+      },
+      "expect_merge": false
+    },
+    {
+      "repo": "psf/requests",
+      "oid": "1b40fdd004bfc8ba5301bcf8a6908264e9b6b877",
+      "additions": 2,
+      "deletions": 2,
+      "changed_files": 1,
+      "parents": {
+        "totalCount": 2
+      },
+      "expect_merge": true
+    },
+    {
+      "repo": "psf/requests",
+      "oid": "dedee0f4562bd7f6612ee66b2e8a3c85cd4c3643",
+      "additions": 1,
+      "deletions": 1,
+      "changed_files": 1,
+      "parents": {
+        "totalCount": 2
+      },
+      "expect_merge": true
+    },
+    {
+      "repo": "psf/requests",
+      "oid": "414f0513c33883adf6f2b46901d4f0b38a455851",
+      "additions": 7,
+      "deletions": 7,
+      "changed_files": 5,
+      "parents": {
+        "totalCount": 1
+      },
+      "expect_merge": false
+    },
+    {
+      "repo": "psf/requests",
+      "oid": "ded32878c0090f6b7b32a008176df6cecf36481f",
+      "additions": 1,
+      "deletions": 1,
+      "changed_files": 1,
+      "parents": {
+        "totalCount": 1
+      },
+      "expect_merge": false
+    }
+  ]
+}
