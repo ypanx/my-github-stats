@@ -157,7 +157,6 @@
     <button class="preset" data-days="60">60 days</button>
     <button class="preset" data-days="90">90 days</button>
     <button class="preset" data-days="365">365 days</button>
-    <button class="preset" data-span="quarter">This quarter</button>
     <button class="preset" data-span="ytd">Year to date</button>
     <div class="range">
       <label for="from">from</label><input type="date" id="from">
@@ -587,16 +586,6 @@ function renderStates(m) {
 
 /* Windows --------------------------------------------------------------- */
 
-function quarterStart(to) {
-  /* Quarters begin on 1 February, 1 May, 1 August and 1 November. */
-  const at = new Date(day(to));
-  const month = at.getUTCMonth(), year = at.getUTCFullYear();
-  const starts = [1, 4, 7, 10];
-  const begins = starts.filter(m => m <= month);
-  return begins.length ? Date.UTC(year, begins[begins.length - 1], 1)
-                       : Date.UTC(year - 1, 10, 1);
-}
-
 function clamp(from, to) {
   return [iso(Math.max(day(from), day(BOUNDS.from))),
           iso(Math.min(day(to), day(BOUNDS.to)))];
@@ -633,8 +622,6 @@ function wire() {
       if (button.dataset.days) {
         const days = +button.dataset.days;
         apply(iso(day(BOUNDS.to) - (days - 1) * DAY), BOUNDS.to, button);
-      } else if (button.dataset.span === "quarter") {
-        apply(iso(quarterStart(BOUNDS.to)), BOUNDS.to, button);
       } else {
         apply(`${BOUNDS.to.slice(0, 4)}-01-01`, BOUNDS.to, button);
       }
