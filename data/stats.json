@@ -13315,13 +13315,6 @@
   ],
   "review_envelopes": [
     {
-      "date": "2025-08-01",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
       "date": "2025-08-04",
       "has_body": false,
       "inline_count": 0,
@@ -22010,8 +22003,8 @@
     }
   ],
   "window": {
-    "from": "2025-08-01",
-    "generated_at": "2026-07-31T08:35:22Z",
-    "to": "2026-07-31"
+    "from": "2025-08-02",
+    "generated_at": "2026-08-01T08:04:52Z",
+    "to": "2026-08-01"
   }
 }
