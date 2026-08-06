@@ -9707,12 +9707,6 @@
   ],
   "prs": [
     {
-      "created": "2025-08-06",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "CLOSED"
-    },
-    {
       "created": "2025-08-18",
       "cycle_hours": 0.88,
       "merged": "2025-08-18",
@@ -21990,8 +21984,8 @@
     }
   ],
   "window": {
-    "from": "2025-08-06",
-    "generated_at": "2026-08-05T08:18:57Z",
-    "to": "2026-08-05"
+    "from": "2025-08-07",
+    "generated_at": "2026-08-06T08:17:16Z",
+    "to": "2026-08-06"
   }
 }
