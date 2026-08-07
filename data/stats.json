@@ -12920,7 +12920,7 @@
       "created": "2026-07-09",
       "cycle_hours": null,
       "merged": null,
-      "state": "OPEN"
+      "state": "CLOSED"
     },
     {
       "created": "2026-07-09",
@@ -21984,8 +21984,8 @@
     }
   ],
   "window": {
-    "from": "2025-08-07",
-    "generated_at": "2026-08-06T08:17:16Z",
-    "to": "2026-08-06"
+    "from": "2025-08-08",
+    "generated_at": "2026-08-07T07:02:33Z",
+    "to": "2026-08-07"
   }
 }
