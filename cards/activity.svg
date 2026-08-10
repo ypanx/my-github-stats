@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="200"
-     viewBox="0 0 480 200" role="img" aria-label="John Pan: 599 pull requests opened, 477 commits, 254,625 lines changed, 895 reviews given, between 2025-08-10 and 2026-08-09.">
-  <title>John Pan: 599 pull requests opened, 477 commits, 254,625 lines changed, 895 reviews given, between 2025-08-10 and 2026-08-09.</title>
+     viewBox="0 0 480 200" role="img" aria-label="John Pan: 599 pull requests opened, 477 commits, 254,625 lines changed, 895 reviews given, between 2025-08-11 and 2026-08-10.">
+  <title>John Pan: 599 pull requests opened, 477 commits, 254,625 lines changed, 895 reviews given, between 2025-08-11 and 2026-08-10.</title>
 
   <!-- Base styles are dark and a light-preference query overrides them, so a
        viewer expressing no preference, or a renderer ignoring the query, gets
@@ -57,7 +57,7 @@
   <rect class="card" x="0.5" y="0.5" width="479" height="199" rx="6"/>
 
   <text class="title" x="20" y="30">John Pan · Activity</text>
-  <text class="window" x="460" y="30" text-anchor="end">2025-08-10 to 2026-08-09</text>
+  <text class="window" x="460" y="30" text-anchor="end">2025-08-11 to 2026-08-10</text>
 
   <line class="divider" x1="240" y1="48" x2="240" y2="184"/>
   <text class="column" x="20" y="62">AUTHORING</text>
