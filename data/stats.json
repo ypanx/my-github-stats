@@ -4569,6 +4569,16 @@
       "date": "2026-07-23",
       "kind": "conversational",
       "on_own_pr": true
+    },
+    {
+      "date": "2026-08-11",
+      "kind": "inline",
+      "on_own_pr": false
+    },
+    {
+      "date": "2026-08-11",
+      "kind": "inline",
+      "on_own_pr": false
     }
   ],
   "commits": [
@@ -21981,11 +21991,39 @@
       "inline_count": 1,
       "on_own_pr": true,
       "state": "COMMENTED"
+    },
+    {
+      "date": "2026-08-11",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-11",
+      "has_body": true,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-11",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": false,
+      "state": "COMMENTED"
+    },
+    {
+      "date": "2026-08-11",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": false,
+      "state": "COMMENTED"
     }
   ],
   "window": {
-    "from": "2025-08-11",
-    "generated_at": "2026-08-10T07:12:08Z",
-    "to": "2026-08-10"
+    "from": "2025-08-12",
+    "generated_at": "2026-08-11T06:49:05Z",
+    "to": "2026-08-11"
   }
 }
