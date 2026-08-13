@@ -4579,6 +4579,16 @@
       "date": "2026-08-11",
       "kind": "inline",
       "on_own_pr": false
+    },
+    {
+      "date": "2026-08-12",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-08-13",
+      "kind": "inline",
+      "on_own_pr": true
     }
   ],
   "commits": [
@@ -13321,6 +13331,12 @@
       "cycle_hours": null,
       "merged": null,
       "state": "OPEN"
+    },
+    {
+      "created": "2026-08-13",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
     }
   ],
   "review_envelopes": [
@@ -22038,11 +22054,39 @@
       "inline_count": 1,
       "on_own_pr": false,
       "state": "COMMENTED"
+    },
+    {
+      "date": "2026-08-12",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-12",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-13",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-13",
+      "has_body": true,
+      "inline_count": 1,
+      "on_own_pr": true,
+      "state": "COMMENTED"
     }
   ],
   "window": {
-    "from": "2025-08-13",
-    "generated_at": "2026-08-12T07:09:45Z",
-    "to": "2026-08-12"
+    "from": "2025-08-14",
+    "generated_at": "2026-08-13T07:14:18Z",
+    "to": "2026-08-13"
   }
 }
