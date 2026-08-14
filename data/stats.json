@@ -22082,11 +22082,18 @@
       "inline_count": 1,
       "on_own_pr": true,
       "state": "COMMENTED"
+    },
+    {
+      "date": "2026-08-14",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-08-14",
-    "generated_at": "2026-08-13T07:14:18Z",
-    "to": "2026-08-13"
+    "from": "2025-08-15",
+    "generated_at": "2026-08-14T07:10:15Z",
+    "to": "2026-08-14"
   }
 }
