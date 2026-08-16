@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="200"
-     viewBox="0 0 480 200" role="img" aria-label="Languages by lines changed, 254,625 in total: Python 63.1%, Go 19.9%, Markdown 9.1%, TypeScript 3.3%, YAML 3.3%, Shell 0.5%, Bazel 0.4%, HTML 0.3%, + 4 smaller 0.2%.">
-  <title>Languages by lines changed, 254,625 in total: Python 63.1%, Go 19.9%, Markdown 9.1%, TypeScript 3.3%, YAML 3.3%, Shell 0.5%, Bazel 0.4%, HTML 0.3%, + 4 smaller 0.2%.</title>
+     viewBox="0 0 480 200" role="img" aria-label="Languages by lines changed, 255,034 in total: Python 63.1%, Go 19.9%, Markdown 9.0%, TypeScript 3.3%, YAML 3.3%, Shell 0.5%, Bazel 0.4%, HTML 0.3%, + 4 smaller 0.2%.">
+  <title>Languages by lines changed, 255,034 in total: Python 63.1%, Go 19.9%, Markdown 9.0%, TypeScript 3.3%, YAML 3.3%, Shell 0.5%, Bazel 0.4%, HTML 0.3%, + 4 smaller 0.2%.</title>
 
   <style>
     .card   { fill: #0d1117; stroke: #30363d; }
@@ -52,17 +52,17 @@
   <rect class="card" x="0.5" y="0.5" width="479" height="199" rx="6"/>
 
   <text class="title" x="20" y="30">John Pan · Languages</text>
-  <text class="window" x="460" y="30" text-anchor="end">254,625 lines</text>
+  <text class="window" x="460" y="30" text-anchor="end">255,034 lines</text>
 
   <!-- The track shows through wherever a segment rounds away to nothing, so the
        bar reads as a full bar rather than as one that stops early. -->
   <rect class="track" x="20" y="54" width="440" height="14" rx="7"/>
   <g clip-path="url(#bar)">
-    <rect class="s0" x="20" y="54" width="278" height="14"/>
-    <rect class="s1" x="298" y="54" width="87" height="14"/>
+    <rect class="s0" x="20" y="54" width="277" height="14"/>
+    <rect class="s1" x="297" y="54" width="88" height="14"/>
     <rect class="s2" x="385" y="54" width="40" height="14"/>
-    <rect class="s3" x="425" y="54" width="15" height="14"/>
-    <rect class="s4" x="440" y="54" width="14" height="14"/>
+    <rect class="s3" x="425" y="54" width="14" height="14"/>
+    <rect class="s4" x="439" y="54" width="15" height="14"/>
     <rect class="s5" x="454" y="54" width="2" height="14"/>
     <rect class="s6" x="456" y="54" width="2" height="14"/>
     <rect class="s7" x="458" y="54" width="1" height="14"/>
@@ -77,7 +77,7 @@
   <text class="share" x="300" y="106" text-anchor="end">19.9%</text>
   <circle class="s2" cx="318" cy="102" r="4"/>
   <text class="name" x="329" y="106">Markdown</text>
-  <text class="share" x="447" y="106" text-anchor="end">9.1%</text>
+  <text class="share" x="447" y="106" text-anchor="end">9.0%</text>
   <circle class="s3" cx="24" cy="132" r="4"/>
   <text class="name" x="35" y="136">TypeScript</text>
   <text class="share" x="153" y="136" text-anchor="end">3.3%</text>
