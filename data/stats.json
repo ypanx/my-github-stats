@@ -4589,18 +4589,19 @@
       "date": "2026-08-13",
       "kind": "inline",
       "on_own_pr": true
+    },
+    {
+      "date": "2026-08-17",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-08-17",
+      "kind": "conversational",
+      "on_own_pr": true
     }
   ],
   "commits": [
-    {
-      "date": "2025-08-18",
-      "languages": {
-        "Python": {
-          "additions": 8,
-          "deletions": 8
-        }
-      }
-    },
     {
       "date": "2025-08-20",
       "languages": {
@@ -9736,15 +9737,26 @@
           "deletions": 60
         }
       }
+    },
+    {
+      "date": "2026-08-17",
+      "languages": {
+        "Bazel": {
+          "additions": 6,
+          "deletions": 0
+        },
+        "Markdown": {
+          "additions": 12,
+          "deletions": 0
+        },
+        "Python": {
+          "additions": 580,
+          "deletions": 93
+        }
+      }
     }
   ],
   "prs": [
-    {
-      "created": "2025-08-18",
-      "cycle_hours": 0.88,
-      "merged": "2025-08-18",
-      "state": "MERGED"
-    },
     {
       "created": "2025-08-19",
       "cycle_hours": 46.88,
@@ -13350,16 +13362,21 @@
       "cycle_hours": 73.3,
       "merged": "2026-08-16",
       "state": "MERGED"
+    },
+    {
+      "created": "2026-08-17",
+      "cycle_hours": 2.37,
+      "merged": "2026-08-17",
+      "state": "MERGED"
+    },
+    {
+      "created": "2026-08-18",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-08-18",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
     {
       "date": "2025-08-19",
       "has_body": false,
@@ -22102,11 +22119,25 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-17",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-17",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-08-18",
-    "generated_at": "2026-08-17T06:35:24Z",
-    "to": "2026-08-17"
+    "from": "2025-08-19",
+    "generated_at": "2026-08-18T06:26:47Z",
+    "to": "2026-08-18"
   }
 }
