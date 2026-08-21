@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="200"
-     viewBox="0 0 480 200" role="img" aria-label="Languages by lines changed, 258,713 in total: Python 63.6%, Go 19.6%, Markdown 8.9%, TypeScript 3.3%, YAML 3.3%, Shell 0.5%, Bazel 0.4%, HTML 0.3%, + 4 smaller 0.2%.">
-  <title>Languages by lines changed, 258,713 in total: Python 63.6%, Go 19.6%, Markdown 8.9%, TypeScript 3.3%, YAML 3.3%, Shell 0.5%, Bazel 0.4%, HTML 0.3%, + 4 smaller 0.2%.</title>
+     viewBox="0 0 480 200" role="img" aria-label="Languages by lines changed, 258,602 in total: Python 63.6%, Go 19.6%, Markdown 8.9%, TypeScript 3.3%, YAML 3.3%, Shell 0.5%, Bazel 0.4%, HTML 0.3%, + 4 smaller 0.2%.">
+  <title>Languages by lines changed, 258,602 in total: Python 63.6%, Go 19.6%, Markdown 8.9%, TypeScript 3.3%, YAML 3.3%, Shell 0.5%, Bazel 0.4%, HTML 0.3%, + 4 smaller 0.2%.</title>
 
   <style>
     .card   { fill: #0d1117; stroke: #30363d; }
@@ -52,7 +52,7 @@
   <rect class="card" x="0.5" y="0.5" width="479" height="199" rx="6"/>
 
   <text class="title" x="20" y="30">John Pan · Languages</text>
-  <text class="window" x="460" y="30" text-anchor="end">258,713 lines</text>
+  <text class="window" x="460" y="30" text-anchor="end">258,602 lines</text>
 
   <!-- The track shows through wherever a segment rounds away to nothing, so the
        bar reads as a full bar rather than as one that stops early. -->
