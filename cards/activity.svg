@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="200"
-     viewBox="0 0 480 200" role="img" aria-label="John Pan: 607 pull requests opened, 483 commits, 258,602 lines changed, 902 reviews given, between 2025-08-22 and 2026-08-21.">
-  <title>John Pan: 607 pull requests opened, 483 commits, 258,602 lines changed, 902 reviews given, between 2025-08-22 and 2026-08-21.</title>
+     viewBox="0 0 480 200" role="img" aria-label="John Pan: 606 pull requests opened, 484 commits, 258,841 lines changed, 904 reviews given, between 2025-08-23 and 2026-08-22.">
+  <title>John Pan: 606 pull requests opened, 484 commits, 258,841 lines changed, 904 reviews given, between 2025-08-23 and 2026-08-22.</title>
 
   <!-- Base styles are dark and a light-preference query overrides them, so a
        viewer expressing no preference, or a renderer ignoring the query, gets
@@ -57,7 +57,7 @@
   <rect class="card" x="0.5" y="0.5" width="479" height="199" rx="6"/>
 
   <text class="title" x="20" y="30">John Pan · Activity</text>
-  <text class="window" x="460" y="30" text-anchor="end">2025-08-22 to 2026-08-21</text>
+  <text class="window" x="460" y="30" text-anchor="end">2025-08-23 to 2026-08-22</text>
 
   <line class="divider" x1="240" y1="48" x2="240" y2="184"/>
   <text class="column" x="20" y="62">AUTHORING</text>
@@ -65,29 +65,29 @@
 
   <use href="#icon-opened" x="20" y="76"/>
   <text class="label" x="42" y="86">opened</text>
-  <text class="value" x="222" y="86" text-anchor="end">607</text>
+  <text class="value" x="222" y="86" text-anchor="end">606</text>
   <use href="#icon-merged" x="20" y="99"/>
   <text class="label" x="56" y="109">merged</text>
-  <text class="value" x="222" y="109" text-anchor="end">475</text>
+  <text class="value" x="222" y="109" text-anchor="end">477</text>
   <use href="#icon-commits" x="20" y="122"/>
   <text class="label" x="42" y="132">commits</text>
-  <text class="value" x="222" y="132" text-anchor="end">483</text>
+  <text class="value" x="222" y="132" text-anchor="end">484</text>
   <use href="#icon-lines" x="20" y="145"/>
   <text class="label" x="42" y="155">lines</text>
-  <text class="value" x="222" y="155" text-anchor="end">258,602</text>
+  <text class="value" x="222" y="155" text-anchor="end">258,841</text>
   <use href="#icon-cycle" x="20" y="168"/>
   <text class="label" x="42" y="178">to merge</text>
   <text class="value" x="222" y="178" text-anchor="end">10.1h</text>
   <use href="#icon-reviews" x="260" y="76"/>
   <text class="label" x="282" y="86">reviews given</text>
-  <text class="value" x="460" y="86" text-anchor="end">902</text>
+  <text class="value" x="460" y="86" text-anchor="end">904</text>
   <use href="#icon-merged" x="260" y="99"/>
   <text class="label" x="296" y="109">approved</text>
-  <text class="value" x="460" y="109" text-anchor="end">622</text>
+  <text class="value" x="460" y="109" text-anchor="end">625</text>
   <use href="#icon-comments" x="260" y="122"/>
   <text class="label" x="282" y="132">comments</text>
-  <text class="value" x="460" y="132" text-anchor="end">913</text>
+  <text class="value" x="460" y="132" text-anchor="end">909</text>
   <use href="#icon-comments" x="260" y="145"/>
   <text class="label" x="296" y="155">inline</text>
-  <text class="value" x="460" y="155" text-anchor="end">646</text>
+  <text class="value" x="460" y="155" text-anchor="end">645</text>
 </svg>

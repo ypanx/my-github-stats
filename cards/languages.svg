@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="200"
-     viewBox="0 0 480 200" role="img" aria-label="Languages by lines changed, 258,602 in total: Python 63.6%, Go 19.6%, Markdown 8.9%, TypeScript 3.3%, YAML 3.3%, Shell 0.5%, Bazel 0.4%, HTML 0.3%, + 4 smaller 0.2%.">
-  <title>Languages by lines changed, 258,602 in total: Python 63.6%, Go 19.6%, Markdown 8.9%, TypeScript 3.3%, YAML 3.3%, Shell 0.5%, Bazel 0.4%, HTML 0.3%, + 4 smaller 0.2%.</title>
+     viewBox="0 0 480 200" role="img" aria-label="Languages by lines changed, 258,841 in total: Python 63.6%, Go 19.6%, Markdown 8.9%, YAML 3.3%, TypeScript 3.3%, Shell 0.5%, Bazel 0.4%, HTML 0.3%, + 4 smaller 0.2%.">
+  <title>Languages by lines changed, 258,841 in total: Python 63.6%, Go 19.6%, Markdown 8.9%, YAML 3.3%, TypeScript 3.3%, Shell 0.5%, Bazel 0.4%, HTML 0.3%, + 4 smaller 0.2%.</title>
 
   <style>
     .card   { fill: #0d1117; stroke: #30363d; }
@@ -22,8 +22,8 @@
     .s0 { fill: #3572A5; }
     .s1 { fill: #00ADD8; }
     .s2 { fill: #0B56DB; }
-    .s3 { fill: #3178C6; }
-    .s4 { fill: #CB171E; }
+    .s3 { fill: #CB171E; }
+    .s4 { fill: #3178C6; }
     .s5 { fill: #89E051; }
     .s6 { fill: #76D275; }
     .s7 { fill: #E34C26; }
@@ -33,8 +33,8 @@
       .s0 { fill: #3572A5; }
       .s1 { fill: #00A1C9; }
       .s2 { fill: #083FA1; }
-      .s3 { fill: #3178C6; }
-      .s4 { fill: #CB171E; }
+      .s3 { fill: #CB171E; }
+      .s4 { fill: #3178C6; }
       .s5 { fill: #54A81E; }
       .s6 { fill: #39AA37; }
       .s7 { fill: #E34C26; }
@@ -52,7 +52,7 @@
   <rect class="card" x="0.5" y="0.5" width="479" height="199" rx="6"/>
 
   <text class="title" x="20" y="30">John Pan · Languages</text>
-  <text class="window" x="460" y="30" text-anchor="end">258,602 lines</text>
+  <text class="window" x="460" y="30" text-anchor="end">258,841 lines</text>
 
   <!-- The track shows through wherever a segment rounds away to nothing, so the
        bar reads as a full bar rather than as one that stops early. -->
@@ -79,10 +79,10 @@
   <text class="name" x="329" y="106">Markdown</text>
   <text class="share" x="447" y="106" text-anchor="end">8.9%</text>
   <circle class="s3" cx="24" cy="132" r="4"/>
-  <text class="name" x="35" y="136">TypeScript</text>
+  <text class="name" x="35" y="136">YAML</text>
   <text class="share" x="153" y="136" text-anchor="end">3.3%</text>
   <circle class="s4" cx="171" cy="132" r="4"/>
-  <text class="name" x="182" y="136">YAML</text>
+  <text class="name" x="182" y="136">TypeScript</text>
   <text class="share" x="300" y="136" text-anchor="end">3.3%</text>
   <circle class="s5" cx="318" cy="132" r="4"/>
   <text class="name" x="329" y="136">Shell</text>
