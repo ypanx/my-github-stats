@@ -22153,11 +22153,25 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-08-24",
-    "generated_at": "2026-08-23T06:25:08Z",
-    "to": "2026-08-23"
+    "from": "2025-08-25",
+    "generated_at": "2026-08-24T06:38:00Z",
+    "to": "2026-08-24"
   }
 }
