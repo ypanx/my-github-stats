@@ -1,21 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-08-25",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-08-25",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-08-25",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-08-26",
       "kind": "inline",
       "on_own_pr": true
@@ -4544,6 +4529,11 @@
       "date": "2026-08-20",
       "kind": "conversational",
       "on_own_pr": true
+    },
+    {
+      "date": "2026-08-25",
+      "kind": "conversational",
+      "on_own_pr": false
     }
   ],
   "commits": [
@@ -9781,30 +9771,6 @@
   ],
   "prs": [
     {
-      "created": "2025-08-25",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "CLOSED"
-    },
-    {
-      "created": "2025-08-25",
-      "cycle_hours": 20.88,
-      "merged": "2025-08-26",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-08-25",
-      "cycle_hours": 24.56,
-      "merged": "2025-08-26",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-08-25",
-      "cycle_hours": 68.73,
-      "merged": "2025-08-28",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-08-26",
       "cycle_hours": 46.73,
       "merged": "2025-08-28",
@@ -13418,34 +13384,6 @@
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-08-25",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-08-25",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-08-25",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-08-25",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
     {
       "date": "2025-08-26",
       "has_body": false,
@@ -22167,11 +22105,81 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-08-25",
-    "generated_at": "2026-08-24T06:38:00Z",
-    "to": "2026-08-24"
+    "from": "2025-08-26",
+    "generated_at": "2026-08-25T06:28:59Z",
+    "to": "2026-08-25"
   }
 }
