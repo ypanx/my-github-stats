@@ -1,21 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-08-27",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-08-27",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-08-27",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-08-28",
       "kind": "conversational",
       "on_own_pr": true
@@ -4532,15 +4517,6 @@
     }
   ],
   "commits": [
-    {
-      "date": "2025-08-27",
-      "languages": {
-        "YAML": {
-          "additions": 2,
-          "deletions": 2
-        }
-      }
-    },
     {
       "date": "2025-08-28",
       "languages": {
@@ -9740,18 +9716,6 @@
   ],
   "prs": [
     {
-      "created": "2025-08-27",
-      "cycle_hours": 3.81,
-      "merged": "2025-08-27",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-08-27",
-      "cycle_hours": 189.87,
-      "merged": "2025-09-04",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-08-28",
       "cycle_hours": 1.08,
       "merged": "2025-08-28",
@@ -13344,16 +13308,15 @@
       "cycle_hours": 7.04,
       "merged": "2026-08-21",
       "state": "MERGED"
+    },
+    {
+      "created": "2026-08-27",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-08-27",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
     {
       "date": "2025-08-29",
       "has_body": false,
@@ -22138,11 +22101,18 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-08-26",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-08-27",
-    "generated_at": "2026-08-26T06:32:10Z",
-    "to": "2026-08-26"
+    "from": "2025-08-28",
+    "generated_at": "2026-08-27T17:06:40Z",
+    "to": "2026-08-27"
   }
 }
