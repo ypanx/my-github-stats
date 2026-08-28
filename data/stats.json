@@ -1,16 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-08-28",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-08-28",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-08-29",
       "kind": "inline",
       "on_own_pr": false
@@ -4517,46 +4507,6 @@
     }
   ],
   "commits": [
-    {
-      "date": "2025-08-28",
-      "languages": {
-        "Bazel": {
-          "additions": 1,
-          "deletions": 0
-        },
-        "Go": {
-          "additions": 41,
-          "deletions": 15
-        }
-      }
-    },
-    {
-      "date": "2025-08-28",
-      "languages": {
-        "Python": {
-          "additions": 6,
-          "deletions": 0
-        }
-      }
-    },
-    {
-      "date": "2025-08-28",
-      "languages": {
-        "Python": {
-          "additions": 669,
-          "deletions": 0
-        }
-      }
-    },
-    {
-      "date": "2025-08-28",
-      "languages": {
-        "YAML": {
-          "additions": 10,
-          "deletions": 3
-        }
-      }
-    },
     {
       "date": "2025-09-01",
       "languages": {
@@ -9715,24 +9665,6 @@
     }
   ],
   "prs": [
-    {
-      "created": "2025-08-28",
-      "cycle_hours": 1.08,
-      "merged": "2025-08-28",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-08-28",
-      "cycle_hours": 1.76,
-      "merged": "2025-08-28",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-08-28",
-      "cycle_hours": 116.09,
-      "merged": "2025-09-02",
-      "state": "MERGED"
-    },
     {
       "created": "2025-09-01",
       "cycle_hours": 0.46,
@@ -22111,8 +22043,8 @@
     }
   ],
   "window": {
-    "from": "2025-08-28",
-    "generated_at": "2026-08-27T17:06:40Z",
-    "to": "2026-08-27"
+    "from": "2025-08-29",
+    "generated_at": "2026-08-28T17:54:40Z",
+    "to": "2026-08-28"
   }
 }
