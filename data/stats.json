@@ -4489,6 +4489,11 @@
       "date": "2026-08-25",
       "kind": "conversational",
       "on_own_pr": false
+    },
+    {
+      "date": "2026-08-31",
+      "kind": "conversational",
+      "on_own_pr": true
     }
   ],
   "commits": [
@@ -13228,6 +13233,24 @@
     },
     {
       "created": "2026-08-27",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-08-31",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-08-31",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-08-31",
       "cycle_hours": null,
       "merged": null,
       "state": "OPEN"
@@ -21993,8 +22016,8 @@
     }
   ],
   "window": {
-    "from": "2025-08-31",
-    "generated_at": "2026-08-30T10:55:40Z",
-    "to": "2026-08-30"
+    "from": "2025-09-01",
+    "generated_at": "2026-08-31T12:09:36Z",
+    "to": "2026-08-31"
   }
 }
