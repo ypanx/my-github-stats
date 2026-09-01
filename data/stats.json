@@ -1,46 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-09-01",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-01",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-01",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-01",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-01",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-01",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-01",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-01",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
       "date": "2025-09-03",
       "kind": "inline",
       "on_own_pr": false
@@ -4497,15 +4457,6 @@
     }
   ],
   "commits": [
-    {
-      "date": "2025-09-01",
-      "languages": {
-        "Shell": {
-          "additions": 163,
-          "deletions": 0
-        }
-      }
-    },
     {
       "date": "2025-09-02",
       "languages": {
@@ -9656,12 +9607,6 @@
   ],
   "prs": [
     {
-      "created": "2025-09-01",
-      "cycle_hours": 0.46,
-      "merged": "2025-09-01",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-09-02",
       "cycle_hours": 27.44,
       "merged": "2025-09-03",
@@ -13257,90 +13202,6 @@
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-09-01",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-01",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-01",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-01",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-01",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-01",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-01",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-01",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-01",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-01",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-01",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-01",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
     {
       "date": "2025-09-02",
       "has_body": false,
@@ -22013,11 +21874,32 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-01",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-01",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-01",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-09-01",
-    "generated_at": "2026-08-31T12:09:36Z",
-    "to": "2026-08-31"
+    "from": "2025-09-02",
+    "generated_at": "2026-09-01T10:47:08Z",
+    "to": "2026-09-01"
   }
 }
