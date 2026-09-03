@@ -1,21 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-09-03",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-03",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-09-03",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-09-04",
       "kind": "inline",
       "on_own_pr": false
@@ -4457,24 +4442,6 @@
     }
   ],
   "commits": [
-    {
-      "date": "2025-09-03",
-      "languages": {
-        "Go": {
-          "additions": 0,
-          "deletions": 16
-        }
-      }
-    },
-    {
-      "date": "2025-09-03",
-      "languages": {
-        "Shell": {
-          "additions": 281,
-          "deletions": 0
-        }
-      }
-    },
     {
       "date": "2025-09-04",
       "languages": {
@@ -9598,24 +9565,6 @@
   ],
   "prs": [
     {
-      "created": "2025-09-03",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "CLOSED"
-    },
-    {
-      "created": "2025-09-03",
-      "cycle_hours": 0.98,
-      "merged": "2025-09-03",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-03",
-      "cycle_hours": 12.77,
-      "merged": "2025-09-04",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-09-05",
       "cycle_hours": 73.53,
       "merged": "2025-09-08",
@@ -13187,34 +13136,6 @@
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-09-03",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-03",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-03",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-03",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
     {
       "date": "2025-09-04",
       "has_body": false,
@@ -21869,8 +21790,8 @@
     }
   ],
   "window": {
-    "from": "2025-09-03",
-    "generated_at": "2026-09-02T10:12:09Z",
-    "to": "2026-09-02"
+    "from": "2025-09-04",
+    "generated_at": "2026-09-03T10:23:50Z",
+    "to": "2026-09-03"
   }
 }

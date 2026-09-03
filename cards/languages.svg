@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="200"
-     viewBox="0 0 480 200" role="img" aria-label="Languages by lines changed, 257,725 in total: Python 63.6%, Go 19.6%, Markdown 9.0%, TypeScript 3.3%, YAML 3.3%, Bazel 0.4%, Shell 0.4%, HTML 0.3%, + 4 smaller 0.2%.">
-  <title>Languages by lines changed, 257,725 in total: Python 63.6%, Go 19.6%, Markdown 9.0%, TypeScript 3.3%, YAML 3.3%, Bazel 0.4%, Shell 0.4%, HTML 0.3%, + 4 smaller 0.2%.</title>
+     viewBox="0 0 480 200" role="img" aria-label="Languages by lines changed, 257,428 in total: Python 63.7%, Go 19.6%, Markdown 9.0%, TypeScript 3.3%, YAML 3.3%, Bazel 0.4%, Shell 0.3%, HTML 0.3%, + 4 smaller 0.2%.">
+  <title>Languages by lines changed, 257,428 in total: Python 63.7%, Go 19.6%, Markdown 9.0%, TypeScript 3.3%, YAML 3.3%, Bazel 0.4%, Shell 0.3%, HTML 0.3%, + 4 smaller 0.2%.</title>
 
   <style>
     .card   { fill: #0d1117; stroke: #30363d; }
@@ -52,7 +52,7 @@
   <rect class="card" x="0.5" y="0.5" width="479" height="199" rx="6"/>
 
   <text class="title" x="20" y="30">John Pan · Languages</text>
-  <text class="window" x="460" y="30" text-anchor="end">257,725 lines</text>
+  <text class="window" x="460" y="30" text-anchor="end">257,428 lines</text>
 
   <!-- The track shows through wherever a segment rounds away to nothing, so the
        bar reads as a full bar rather than as one that stops early. -->
@@ -60,18 +60,18 @@
   <g clip-path="url(#bar)">
     <rect class="s0" x="20" y="54" width="280" height="14"/>
     <rect class="s1" x="300" y="54" width="86" height="14"/>
-    <rect class="s2" x="386" y="54" width="39" height="14"/>
-    <rect class="s3" x="425" y="54" width="15" height="14"/>
-    <rect class="s4" x="440" y="54" width="14" height="14"/>
-    <rect class="s5" x="454" y="54" width="2" height="14"/>
-    <rect class="s6" x="456" y="54" width="2" height="14"/>
+    <rect class="s2" x="386" y="54" width="40" height="14"/>
+    <rect class="s3" x="426" y="54" width="14" height="14"/>
+    <rect class="s4" x="440" y="54" width="15" height="14"/>
+    <rect class="s5" x="455" y="54" width="2" height="14"/>
+    <rect class="s6" x="457" y="54" width="1" height="14"/>
     <rect class="s7" x="458" y="54" width="1" height="14"/>
     <rect class="s8" x="459" y="54" width="1" height="14"/>
   </g>
 
   <circle class="s0" cx="24" cy="102" r="4"/>
   <text class="name" x="35" y="106">Python</text>
-  <text class="share" x="153" y="106" text-anchor="end">63.6%</text>
+  <text class="share" x="153" y="106" text-anchor="end">63.7%</text>
   <circle class="s1" cx="171" cy="102" r="4"/>
   <text class="name" x="182" y="106">Go</text>
   <text class="share" x="300" y="106" text-anchor="end">19.6%</text>
@@ -89,7 +89,7 @@
   <text class="share" x="447" y="136" text-anchor="end">0.4%</text>
   <circle class="s6" cx="24" cy="162" r="4"/>
   <text class="name" x="35" y="166">Shell</text>
-  <text class="share" x="153" y="166" text-anchor="end">0.4%</text>
+  <text class="share" x="153" y="166" text-anchor="end">0.3%</text>
   <circle class="s7" cx="171" cy="162" r="4"/>
   <text class="name" x="182" y="166">HTML</text>
   <text class="share" x="300" y="166" text-anchor="end">0.3%</text>
