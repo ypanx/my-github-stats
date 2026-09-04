@@ -1,11 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-09-04",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
       "date": "2025-09-06",
       "kind": "inline",
       "on_own_pr": false
@@ -4442,28 +4437,6 @@
     }
   ],
   "commits": [
-    {
-      "date": "2025-09-04",
-      "languages": {
-        "Bazel": {
-          "additions": 0,
-          "deletions": 1
-        },
-        "Go": {
-          "additions": 361,
-          "deletions": 29
-        }
-      }
-    },
-    {
-      "date": "2025-09-04",
-      "languages": {
-        "Go": {
-          "additions": 0,
-          "deletions": 20
-        }
-      }
-    },
     {
       "date": "2025-09-08",
       "languages": {
@@ -13137,13 +13110,6 @@
   ],
   "review_envelopes": [
     {
-      "date": "2025-09-04",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
       "date": "2025-09-05",
       "has_body": false,
       "inline_count": 0,
@@ -21790,8 +21756,8 @@
     }
   ],
   "window": {
-    "from": "2025-09-04",
-    "generated_at": "2026-09-03T10:23:50Z",
-    "to": "2026-09-03"
+    "from": "2025-09-05",
+    "generated_at": "2026-09-04T10:11:07Z",
+    "to": "2026-09-04"
   }
 }
