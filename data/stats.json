@@ -9538,12 +9538,6 @@
   ],
   "prs": [
     {
-      "created": "2025-09-05",
-      "cycle_hours": 73.53,
-      "merged": "2025-09-08",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-09-08",
       "cycle_hours": 0.51,
       "merged": "2025-09-08",
@@ -13109,13 +13103,6 @@
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-09-05",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
     {
       "date": "2025-09-06",
       "has_body": false,
@@ -21756,8 +21743,8 @@
     }
   ],
   "window": {
-    "from": "2025-09-05",
-    "generated_at": "2026-09-04T10:11:07Z",
-    "to": "2026-09-04"
+    "from": "2025-09-06",
+    "generated_at": "2026-09-05T09:40:17Z",
+    "to": "2026-09-05"
   }
 }
