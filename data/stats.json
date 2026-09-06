@@ -1,11 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-09-06",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
       "date": "2025-09-08",
       "kind": "inline",
       "on_own_pr": true
@@ -13104,13 +13099,6 @@
   ],
   "review_envelopes": [
     {
-      "date": "2025-09-06",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
       "date": "2025-09-08",
       "has_body": false,
       "inline_count": 0,
@@ -21743,8 +21731,8 @@
     }
   ],
   "window": {
-    "from": "2025-09-06",
-    "generated_at": "2026-09-05T09:40:17Z",
-    "to": "2026-09-05"
+    "from": "2025-09-07",
+    "generated_at": "2026-09-06T09:55:47Z",
+    "to": "2026-09-06"
   }
 }
