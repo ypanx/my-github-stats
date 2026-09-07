@@ -4429,6 +4429,91 @@
       "date": "2026-08-31",
       "kind": "conversational",
       "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
     }
   ],
   "commits": [
@@ -13095,6 +13180,48 @@
       "cycle_hours": null,
       "merged": null,
       "state": "OPEN"
+    },
+    {
+      "created": "2026-09-07",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-09-07",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-09-07",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-09-07",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-09-07",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-09-07",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-09-07",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
     }
   ],
   "review_envelopes": [
@@ -21728,11 +21855,32 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-06",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-06",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-07",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-09-07",
-    "generated_at": "2026-09-06T09:55:47Z",
-    "to": "2026-09-06"
+    "from": "2025-09-08",
+    "generated_at": "2026-09-07T11:02:41Z",
+    "to": "2026-09-07"
   }
 }
