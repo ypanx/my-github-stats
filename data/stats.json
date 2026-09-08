@@ -1,16 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-09-08",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-09-08",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-09-09",
       "kind": "inline",
       "on_own_pr": false
@@ -4514,40 +4504,24 @@
       "date": "2026-09-07",
       "kind": "conversational",
       "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-08",
+      "kind": "conversational",
+      "on_own_pr": true
     }
   ],
   "commits": [
-    {
-      "date": "2025-09-08",
-      "languages": {
-        "Bazel": {
-          "additions": 0,
-          "deletions": 1
-        },
-        "Go": {
-          "additions": 10,
-          "deletions": 2
-        }
-      }
-    },
-    {
-      "date": "2025-09-08",
-      "languages": {
-        "Go": {
-          "additions": 6,
-          "deletions": 1
-        }
-      }
-    },
-    {
-      "date": "2025-09-08",
-      "languages": {
-        "Python": {
-          "additions": 1,
-          "deletions": 1
-        }
-      }
-    },
     {
       "date": "2025-09-09",
       "languages": {
@@ -9614,39 +9588,101 @@
           "deletions": 92
         }
       }
+    },
+    {
+      "date": "2026-09-08",
+      "languages": {
+        "Bazel": {
+          "additions": 0,
+          "deletions": 1
+        },
+        "Go": {
+          "additions": 6,
+          "deletions": 3
+        },
+        "YAML": {
+          "additions": 3,
+          "deletions": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "languages": {
+        "Bazel": {
+          "additions": 0,
+          "deletions": 1
+        },
+        "Go": {
+          "additions": 6,
+          "deletions": 3
+        },
+        "YAML": {
+          "additions": 7,
+          "deletions": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "languages": {
+        "Go": {
+          "additions": 10,
+          "deletions": 10
+        },
+        "YAML": {
+          "additions": 29,
+          "deletions": 1
+        }
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "languages": {
+        "YAML": {
+          "additions": 10,
+          "deletions": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "languages": {
+        "YAML": {
+          "additions": 10,
+          "deletions": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "languages": {
+        "YAML": {
+          "additions": 14,
+          "deletions": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "languages": {
+        "YAML": {
+          "additions": 2,
+          "deletions": 1
+        }
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "languages": {
+        "YAML": {
+          "additions": 9,
+          "deletions": 0
+        }
+      }
     }
   ],
   "prs": [
-    {
-      "created": "2025-09-08",
-      "cycle_hours": 0.51,
-      "merged": "2025-09-08",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-08",
-      "cycle_hours": 0.56,
-      "merged": "2025-09-08",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-08",
-      "cycle_hours": 2.95,
-      "merged": "2025-09-08",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-08",
-      "cycle_hours": 11.94,
-      "merged": "2025-09-09",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-08",
-      "cycle_hours": 17.73,
-      "merged": "2025-09-09",
-      "state": "MERGED"
-    },
     {
       "created": "2025-09-09",
       "cycle_hours": null,
@@ -13177,89 +13213,54 @@
     },
     {
       "created": "2026-08-31",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
+      "cycle_hours": 196.8,
+      "merged": "2026-09-08",
+      "state": "MERGED"
     },
     {
       "created": "2026-09-07",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
+      "cycle_hours": 23.0,
+      "merged": "2026-09-08",
+      "state": "MERGED"
     },
     {
       "created": "2026-09-07",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
+      "cycle_hours": 23.01,
+      "merged": "2026-09-08",
+      "state": "MERGED"
     },
     {
       "created": "2026-09-07",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
+      "cycle_hours": 23.01,
+      "merged": "2026-09-08",
+      "state": "MERGED"
     },
     {
       "created": "2026-09-07",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
+      "cycle_hours": 23.01,
+      "merged": "2026-09-08",
+      "state": "MERGED"
     },
     {
       "created": "2026-09-07",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
+      "cycle_hours": 23.2,
+      "merged": "2026-09-08",
+      "state": "MERGED"
     },
     {
       "created": "2026-09-07",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
+      "cycle_hours": 23.2,
+      "merged": "2026-09-08",
+      "state": "MERGED"
     },
     {
       "created": "2026-09-07",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
+      "cycle_hours": 23.21,
+      "merged": "2026-09-08",
+      "state": "MERGED"
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-09-08",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-08",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-08",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-08",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-08",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
     {
       "date": "2025-09-09",
       "has_body": false,
@@ -21876,11 +21877,32 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-08",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-08",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-08",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-09-08",
-    "generated_at": "2026-09-07T11:02:41Z",
-    "to": "2026-09-07"
+    "from": "2025-09-09",
+    "generated_at": "2026-09-08T10:18:17Z",
+    "to": "2026-09-08"
   }
 }
