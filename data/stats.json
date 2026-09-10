@@ -1,26 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-09-10",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-10",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-10",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-09-10",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-09-11",
       "kind": "conversational",
       "on_own_pr": true
@@ -4534,36 +4514,24 @@
       "date": "2026-09-09",
       "kind": "conversational",
       "on_own_pr": true
+    },
+    {
+      "date": "2026-09-10",
+      "kind": "inline",
+      "on_own_pr": false
+    },
+    {
+      "date": "2026-09-10",
+      "kind": "inline",
+      "on_own_pr": false
+    },
+    {
+      "date": "2026-09-10",
+      "kind": "inline",
+      "on_own_pr": false
     }
   ],
   "commits": [
-    {
-      "date": "2025-09-10",
-      "languages": {
-        "SQL": {
-          "additions": 3,
-          "deletions": 0
-        }
-      }
-    },
-    {
-      "date": "2025-09-10",
-      "languages": {
-        "SQL": {
-          "additions": 62,
-          "deletions": 0
-        }
-      }
-    },
-    {
-      "date": "2025-09-10",
-      "languages": {
-        "Text": {
-          "additions": 1,
-          "deletions": 1
-        }
-      }
-    },
     {
       "date": "2025-09-11",
       "languages": {
@@ -9681,30 +9649,6 @@
   ],
   "prs": [
     {
-      "created": "2025-09-10",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "CLOSED"
-    },
-    {
-      "created": "2025-09-10",
-      "cycle_hours": 0.4,
-      "merged": "2025-09-10",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-10",
-      "cycle_hours": 15.58,
-      "merged": "2025-09-11",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-10",
-      "cycle_hours": 26.97,
-      "merged": "2025-09-11",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-09-11",
       "cycle_hours": null,
       "merged": null,
@@ -13243,65 +13187,15 @@
       "cycle_hours": null,
       "merged": null,
       "state": "OPEN"
+    },
+    {
+      "created": "2026-09-09",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-09-10",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-10",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-10",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-10",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-10",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-10",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-10",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-10",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
     {
       "date": "2025-09-11",
       "has_body": false,
@@ -21869,11 +21763,39 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-10",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-10",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": false,
+      "state": "COMMENTED"
+    },
+    {
+      "date": "2026-09-10",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": false,
+      "state": "COMMENTED"
+    },
+    {
+      "date": "2026-09-10",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": false,
+      "state": "COMMENTED"
     }
   ],
   "window": {
-    "from": "2025-09-10",
-    "generated_at": "2026-09-09T10:24:15Z",
-    "to": "2026-09-09"
+    "from": "2025-09-11",
+    "generated_at": "2026-09-10T10:16:32Z",
+    "to": "2026-09-10"
   }
 }
