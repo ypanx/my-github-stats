@@ -13149,13 +13149,6 @@
   ],
   "review_envelopes": [
     {
-      "date": "2025-09-12",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
       "date": "2025-09-13",
       "has_body": false,
       "inline_count": 0,
@@ -21743,11 +21736,25 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-11",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-11",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-09-12",
-    "generated_at": "2026-09-11T10:13:47Z",
-    "to": "2026-09-11"
+    "from": "2025-09-13",
+    "generated_at": "2026-09-12T09:47:50Z",
+    "to": "2026-09-12"
   }
 }
