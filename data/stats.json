@@ -4508,28 +4508,6 @@
   ],
   "commits": [
     {
-      "date": "2025-09-13",
-      "languages": {
-        "Python": {
-          "additions": 358,
-          "deletions": 0
-        },
-        "SQL": {
-          "additions": 20,
-          "deletions": 0
-        }
-      }
-    },
-    {
-      "date": "2025-09-13",
-      "languages": {
-        "Text": {
-          "additions": 2,
-          "deletions": 2
-        }
-      }
-    },
-    {
       "date": "2025-09-15",
       "languages": {
         "Go": {
@@ -9619,18 +9597,6 @@
   ],
   "prs": [
     {
-      "created": "2025-09-13",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "CLOSED"
-    },
-    {
-      "created": "2025-09-13",
-      "cycle_hours": 3.39,
-      "merged": "2025-09-13",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-09-15",
       "cycle_hours": 1.25,
       "merged": "2025-09-15",
@@ -13148,13 +13114,6 @@
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-09-13",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
     {
       "date": "2025-09-15",
       "has_body": false,
@@ -21753,8 +21712,8 @@
     }
   ],
   "window": {
-    "from": "2025-09-13",
-    "generated_at": "2026-09-12T09:47:50Z",
-    "to": "2026-09-12"
+    "from": "2025-09-14",
+    "generated_at": "2026-09-13T10:48:43Z",
+    "to": "2026-09-13"
   }
 }
