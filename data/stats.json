@@ -1,11 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-09-15",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-09-16",
       "kind": "inline",
       "on_own_pr": false
@@ -4504,27 +4499,14 @@
       "date": "2026-09-10",
       "kind": "inline",
       "on_own_pr": false
+    },
+    {
+      "date": "2026-09-14",
+      "kind": "conversational",
+      "on_own_pr": true
     }
   ],
   "commits": [
-    {
-      "date": "2025-09-15",
-      "languages": {
-        "Go": {
-          "additions": 849,
-          "deletions": 1397
-        }
-      }
-    },
-    {
-      "date": "2025-09-15",
-      "languages": {
-        "Python": {
-          "additions": 19,
-          "deletions": 2
-        }
-      }
-    },
     {
       "date": "2025-09-17",
       "languages": {
@@ -9597,12 +9579,6 @@
   ],
   "prs": [
     {
-      "created": "2025-09-15",
-      "cycle_hours": 1.25,
-      "merged": "2025-09-15",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-09-16",
       "cycle_hours": 16.61,
       "merged": "2025-09-17",
@@ -13111,37 +13087,15 @@
       "cycle_hours": 20.14,
       "merged": "2026-09-10",
       "state": "MERGED"
+    },
+    {
+      "created": "2026-09-14",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-09-15",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-15",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-15",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-15",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
     {
       "date": "2025-09-16",
       "has_body": false,
@@ -21712,8 +21666,8 @@
     }
   ],
   "window": {
-    "from": "2025-09-15",
-    "generated_at": "2026-09-14T11:14:41Z",
-    "to": "2026-09-14"
+    "from": "2025-09-16",
+    "generated_at": "2026-09-15T10:42:30Z",
+    "to": "2026-09-15"
   }
 }
