@@ -1,16 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-09-16",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-16",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-09-17",
       "kind": "conversational",
       "on_own_pr": false
@@ -4504,6 +4494,11 @@
       "date": "2026-09-14",
       "kind": "conversational",
       "on_own_pr": true
+    },
+    {
+      "date": "2026-09-16",
+      "kind": "inline",
+      "on_own_pr": false
     }
   ],
   "commits": [
@@ -9579,18 +9574,6 @@
   ],
   "prs": [
     {
-      "created": "2025-09-16",
-      "cycle_hours": 16.61,
-      "merged": "2025-09-17",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-16",
-      "cycle_hours": 19.28,
-      "merged": "2025-09-17",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-09-17",
       "cycle_hours": 23.31,
       "merged": "2025-09-18",
@@ -13096,34 +13079,6 @@
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-09-16",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-16",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-16",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-16",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
     {
       "date": "2025-09-17",
       "has_body": false,
@@ -21663,11 +21618,32 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-16",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-16",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-16",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": false,
+      "state": "COMMENTED"
     }
   ],
   "window": {
-    "from": "2025-09-16",
-    "generated_at": "2026-09-15T10:42:30Z",
-    "to": "2026-09-15"
+    "from": "2025-09-17",
+    "generated_at": "2026-09-16T10:30:36Z",
+    "to": "2026-09-16"
   }
 }
