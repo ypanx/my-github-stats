@@ -1,16 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-09-17",
-      "kind": "conversational",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-17",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-09-18",
       "kind": "conversational",
       "on_own_pr": true
@@ -4502,19 +4492,6 @@
     }
   ],
   "commits": [
-    {
-      "date": "2025-09-17",
-      "languages": {
-        "Bazel": {
-          "additions": 19,
-          "deletions": 0
-        },
-        "Go": {
-          "additions": 300,
-          "deletions": 121
-        }
-      }
-    },
     {
       "date": "2025-09-18",
       "languages": {
@@ -9570,27 +9547,22 @@
           "deletions": 8
         }
       }
+    },
+    {
+      "date": "2026-09-16",
+      "languages": {
+        "Markdown": {
+          "additions": 10,
+          "deletions": 4
+        },
+        "Python": {
+          "additions": 476,
+          "deletions": 38
+        }
+      }
     }
   ],
   "prs": [
-    {
-      "created": "2025-09-17",
-      "cycle_hours": 23.31,
-      "merged": "2025-09-18",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-17",
-      "cycle_hours": 24.29,
-      "merged": "2025-09-18",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-17",
-      "cycle_hours": 29.25,
-      "merged": "2025-09-18",
-      "state": "MERGED"
-    },
     {
       "created": "2025-09-18",
       "cycle_hours": null,
@@ -13073,54 +13045,12 @@
     },
     {
       "created": "2026-09-14",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
+      "cycle_hours": 46.94,
+      "merged": "2026-09-16",
+      "state": "MERGED"
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-09-17",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-17",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-17",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-17",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-17",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-17",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
     {
       "date": "2025-09-18",
       "has_body": false,
@@ -21642,8 +21572,8 @@
     }
   ],
   "window": {
-    "from": "2025-09-17",
-    "generated_at": "2026-09-16T10:30:36Z",
-    "to": "2026-09-16"
+    "from": "2025-09-18",
+    "generated_at": "2026-09-17T10:40:30Z",
+    "to": "2026-09-17"
   }
 }
