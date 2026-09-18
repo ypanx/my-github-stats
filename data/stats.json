@@ -1,61 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-09-18",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-09-18",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-18",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-18",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-18",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-18",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-18",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-18",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-18",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-18",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-18",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-09-19",
       "kind": "conversational",
       "on_own_pr": false
@@ -4492,64 +4437,6 @@
     }
   ],
   "commits": [
-    {
-      "date": "2025-09-18",
-      "languages": {
-        "Bazel": {
-          "additions": 0,
-          "deletions": 1
-        },
-        "Go": {
-          "additions": 39,
-          "deletions": 112
-        }
-      }
-    },
-    {
-      "date": "2025-09-18",
-      "languages": {
-        "Python": {
-          "additions": 1,
-          "deletions": 0
-        }
-      }
-    },
-    {
-      "date": "2025-09-18",
-      "languages": {
-        "Python": {
-          "additions": 1131,
-          "deletions": 161
-        }
-      }
-    },
-    {
-      "date": "2025-09-18",
-      "languages": {
-        "Python": {
-          "additions": 2,
-          "deletions": 1
-        }
-      }
-    },
-    {
-      "date": "2025-09-18",
-      "languages": {
-        "Python": {
-          "additions": 216,
-          "deletions": 92
-        }
-      }
-    },
-    {
-      "date": "2025-09-18",
-      "languages": {
-        "YAML": {
-          "additions": 7,
-          "deletions": 0
-        }
-      }
-    },
     {
       "date": "2025-09-22",
       "languages": {
@@ -9564,30 +9451,6 @@
   ],
   "prs": [
     {
-      "created": "2025-09-18",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "CLOSED"
-    },
-    {
-      "created": "2025-09-18",
-      "cycle_hours": 0.27,
-      "merged": "2025-09-18",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-18",
-      "cycle_hours": 0.97,
-      "merged": "2025-09-18",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-18",
-      "cycle_hours": 2.63,
-      "merged": "2025-09-18",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-09-19",
       "cycle_hours": null,
       "merged": null,
@@ -13051,104 +12914,6 @@
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-09-18",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-18",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
     {
       "date": "2025-09-19",
       "has_body": false,
@@ -21572,8 +21337,8 @@
     }
   ],
   "window": {
-    "from": "2025-09-18",
-    "generated_at": "2026-09-17T10:40:30Z",
-    "to": "2026-09-17"
+    "from": "2025-09-19",
+    "generated_at": "2026-09-18T10:16:09Z",
+    "to": "2026-09-18"
   }
 }
