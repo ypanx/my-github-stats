@@ -4206,6 +4206,11 @@
       "on_own_pr": true
     },
     {
+      "date": "2026-08-12",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
       "date": "2026-08-13",
       "kind": "inline",
       "on_own_pr": true
@@ -9411,12 +9416,6 @@
   ],
   "prs": [
     {
-      "created": "2025-09-20",
-      "cycle_hours": 66.52,
-      "merged": "2025-09-23",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-09-22",
       "cycle_hours": 1.74,
       "merged": "2025-09-22",
@@ -12696,7 +12695,7 @@
       "created": "2026-08-12",
       "cycle_hours": null,
       "merged": null,
-      "state": "OPEN"
+      "state": "CLOSED"
     },
     {
       "created": "2026-08-12",
@@ -21180,8 +21179,8 @@
     }
   ],
   "window": {
-    "from": "2025-09-20",
-    "generated_at": "2026-09-19T09:57:29Z",
-    "to": "2026-09-19"
+    "from": "2025-09-21",
+    "generated_at": "2026-09-20T10:18:28Z",
+    "to": "2026-09-20"
   }
 }
