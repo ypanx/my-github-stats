@@ -4399,6 +4399,11 @@
       "date": "2026-09-16",
       "kind": "inline",
       "on_own_pr": false
+    },
+    {
+      "date": "2026-09-21",
+      "kind": "conversational",
+      "on_own_pr": true
     }
   ],
   "commits": [
@@ -12858,6 +12863,12 @@
       "cycle_hours": 46.94,
       "merged": "2026-09-16",
       "state": "MERGED"
+    },
+    {
+      "created": "2026-09-21",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
     }
   ],
   "review_envelopes": [
@@ -21176,11 +21187,46 @@
       "inline_count": 1,
       "on_own_pr": false,
       "state": "COMMENTED"
+    },
+    {
+      "date": "2026-09-21",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-21",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-21",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-21",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-21",
+      "has_body": true,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-09-21",
-    "generated_at": "2026-09-20T10:18:28Z",
-    "to": "2026-09-20"
+    "from": "2025-09-22",
+    "generated_at": "2026-09-21T11:26:26Z",
+    "to": "2026-09-21"
   }
 }
