@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="200"
-     viewBox="0 0 480 200" role="img" aria-label="Languages by lines changed, 251,393 in total: Python 64.5%, Go 18.5%, Markdown 9.2%, TypeScript 3.4%, YAML 3.3%, Bazel 0.4%, Shell 0.3%, HTML 0.3%, + 4 smaller 0.1%.">
-  <title>Languages by lines changed, 251,393 in total: Python 64.5%, Go 18.5%, Markdown 9.2%, TypeScript 3.4%, YAML 3.3%, Bazel 0.4%, Shell 0.3%, HTML 0.3%, + 4 smaller 0.1%.</title>
+     viewBox="0 0 480 200" role="img" aria-label="Languages by lines changed, 251,605 in total: Python 64.4%, Go 18.6%, Markdown 9.2%, TypeScript 3.4%, YAML 3.3%, Bazel 0.4%, Shell 0.3%, HTML 0.3%, + 4 smaller 0.1%.">
+  <title>Languages by lines changed, 251,605 in total: Python 64.4%, Go 18.6%, Markdown 9.2%, TypeScript 3.4%, YAML 3.3%, Bazel 0.4%, Shell 0.3%, HTML 0.3%, + 4 smaller 0.1%.</title>
 
   <style>
     .card   { fill: #0d1117; stroke: #30363d; }
@@ -52,14 +52,14 @@
   <rect class="card" x="0.5" y="0.5" width="479" height="199" rx="6"/>
 
   <text class="title" x="20" y="30">John Pan · Languages</text>
-  <text class="window" x="460" y="30" text-anchor="end">251,393 lines</text>
+  <text class="window" x="460" y="30" text-anchor="end">251,605 lines</text>
 
   <!-- The track shows through wherever a segment rounds away to nothing, so the
        bar reads as a full bar rather than as one that stops early. -->
   <rect class="track" x="20" y="54" width="440" height="14" rx="7"/>
   <g clip-path="url(#bar)">
-    <rect class="s0" x="20" y="54" width="284" height="14"/>
-    <rect class="s1" x="304" y="54" width="81" height="14"/>
+    <rect class="s0" x="20" y="54" width="283" height="14"/>
+    <rect class="s1" x="303" y="54" width="82" height="14"/>
     <rect class="s2" x="385" y="54" width="41" height="14"/>
     <rect class="s3" x="426" y="54" width="15" height="14"/>
     <rect class="s4" x="441" y="54" width="14" height="14"/>
@@ -71,10 +71,10 @@
 
   <circle class="s0" cx="24" cy="102" r="4"/>
   <text class="name" x="35" y="106">Python</text>
-  <text class="share" x="153" y="106" text-anchor="end">64.5%</text>
+  <text class="share" x="153" y="106" text-anchor="end">64.4%</text>
   <circle class="s1" cx="171" cy="102" r="4"/>
   <text class="name" x="182" y="106">Go</text>
-  <text class="share" x="300" y="106" text-anchor="end">18.5%</text>
+  <text class="share" x="300" y="106" text-anchor="end">18.6%</text>
   <circle class="s2" cx="318" cy="102" r="4"/>
   <text class="name" x="329" y="106">Markdown</text>
   <text class="share" x="447" y="106" text-anchor="end">9.2%</text>
