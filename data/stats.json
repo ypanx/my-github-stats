@@ -4394,6 +4394,21 @@
       "date": "2026-09-23",
       "kind": "conversational",
       "on_own_pr": true
+    },
+    {
+      "date": "2026-09-24",
+      "kind": "inline",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-24",
+      "kind": "inline",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-09-24",
+      "kind": "inline",
+      "on_own_pr": true
     }
   ],
   "commits": [
@@ -9388,15 +9403,18 @@
           "deletions": 93
         }
       }
+    },
+    {
+      "date": "2026-09-24",
+      "languages": {
+        "TypeScript": {
+          "additions": 151,
+          "deletions": 47
+        }
+      }
     }
   ],
   "prs": [
-    {
-      "created": "2025-09-25",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "CLOSED"
-    },
     {
       "created": "2025-09-29",
       "cycle_hours": 1.16,
@@ -12623,7 +12641,7 @@
       "created": "2026-08-12",
       "cycle_hours": null,
       "merged": null,
-      "state": "OPEN"
+      "state": "CLOSED"
     },
     {
       "created": "2026-08-13",
@@ -12701,7 +12719,7 @@
       "created": "2026-08-27",
       "cycle_hours": null,
       "merged": null,
-      "state": "OPEN"
+      "state": "CLOSED"
     },
     {
       "created": "2026-08-31",
@@ -12797,6 +12815,12 @@
       "created": "2026-09-23",
       "cycle_hours": 4.64,
       "merged": "2026-09-23",
+      "state": "MERGED"
+    },
+    {
+      "created": "2026-09-24",
+      "cycle_hours": 3.46,
+      "merged": "2026-09-24",
       "state": "MERGED"
     }
   ],
@@ -21193,11 +21217,25 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-24",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-09-24",
+      "has_body": true,
+      "inline_count": 3,
+      "on_own_pr": true,
+      "state": "COMMENTED"
     }
   ],
   "window": {
-    "from": "2025-09-25",
-    "generated_at": "2026-09-24T10:46:06Z",
-    "to": "2026-09-24"
+    "from": "2025-09-26",
+    "generated_at": "2026-09-25T10:49:26Z",
+    "to": "2026-09-25"
   }
 }
