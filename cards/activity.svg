@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="200"
-     viewBox="0 0 480 200" role="img" aria-label="John Pan: 568 pull requests opened, 458 commits, 251,876 lines changed, 874 reviews given, between 2025-09-26 and 2026-09-25.">
-  <title>John Pan: 568 pull requests opened, 458 commits, 251,876 lines changed, 874 reviews given, between 2025-09-26 and 2026-09-25.</title>
+     viewBox="0 0 480 200" role="img" aria-label="John Pan: 568 pull requests opened, 457 commits, 251,816 lines changed, 874 reviews given, between 2025-09-27 and 2026-09-26.">
+  <title>John Pan: 568 pull requests opened, 457 commits, 251,816 lines changed, 874 reviews given, between 2025-09-27 and 2026-09-26.</title>
 
   <!-- Base styles are dark and a light-preference query overrides them, so a
        viewer expressing no preference, or a renderer ignoring the query, gets
@@ -57,7 +57,7 @@
   <rect class="card" x="0.5" y="0.5" width="479" height="199" rx="6"/>
 
   <text class="title" x="20" y="30">John Pan · Activity</text>
-  <text class="window" x="460" y="30" text-anchor="end">2025-09-26 to 2026-09-25</text>
+  <text class="window" x="460" y="30" text-anchor="end">2025-09-27 to 2026-09-26</text>
 
   <line class="divider" x1="240" y1="48" x2="240" y2="184"/>
   <text class="column" x="20" y="62">AUTHORING</text>
@@ -71,10 +71,10 @@
   <text class="value" x="222" y="109" text-anchor="end">447</text>
   <use href="#icon-commits" x="20" y="122"/>
   <text class="label" x="42" y="132">commits</text>
-  <text class="value" x="222" y="132" text-anchor="end">458</text>
+  <text class="value" x="222" y="132" text-anchor="end">457</text>
   <use href="#icon-lines" x="20" y="145"/>
   <text class="label" x="42" y="155">lines</text>
-  <text class="value" x="222" y="155" text-anchor="end">251,876</text>
+  <text class="value" x="222" y="155" text-anchor="end">251,816</text>
   <use href="#icon-cycle" x="20" y="168"/>
   <text class="label" x="42" y="178">to merge</text>
   <text class="value" x="222" y="178" text-anchor="end">10.1h</text>
