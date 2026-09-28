@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="200"
-     viewBox="0 0 480 200" role="img" aria-label="John Pan: 568 pull requests opened, 457 commits, 251,816 lines changed, 873 reviews given, between 2025-09-28 and 2026-09-27.">
-  <title>John Pan: 568 pull requests opened, 457 commits, 251,816 lines changed, 873 reviews given, between 2025-09-28 and 2026-09-27.</title>
+     viewBox="0 0 480 200" role="img" aria-label="John Pan: 569 pull requests opened, 457 commits, 251,816 lines changed, 874 reviews given, between 2025-09-29 and 2026-09-28.">
+  <title>John Pan: 569 pull requests opened, 457 commits, 251,816 lines changed, 874 reviews given, between 2025-09-29 and 2026-09-28.</title>
 
   <!-- Base styles are dark and a light-preference query overrides them, so a
        viewer expressing no preference, or a renderer ignoring the query, gets
@@ -57,7 +57,7 @@
   <rect class="card" x="0.5" y="0.5" width="479" height="199" rx="6"/>
 
   <text class="title" x="20" y="30">John Pan · Activity</text>
-  <text class="window" x="460" y="30" text-anchor="end">2025-09-28 to 2026-09-27</text>
+  <text class="window" x="460" y="30" text-anchor="end">2025-09-29 to 2026-09-28</text>
 
   <line class="divider" x1="240" y1="48" x2="240" y2="184"/>
   <text class="column" x="20" y="62">AUTHORING</text>
@@ -65,7 +65,7 @@
 
   <use href="#icon-opened" x="20" y="76"/>
   <text class="label" x="42" y="86">opened</text>
-  <text class="value" x="222" y="86" text-anchor="end">568</text>
+  <text class="value" x="222" y="86" text-anchor="end">569</text>
   <use href="#icon-merged" x="20" y="99"/>
   <text class="label" x="56" y="109">merged</text>
   <text class="value" x="222" y="109" text-anchor="end">447</text>
@@ -80,10 +80,10 @@
   <text class="value" x="222" y="178" text-anchor="end">10.1h</text>
   <use href="#icon-reviews" x="260" y="76"/>
   <text class="label" x="282" y="86">reviews given</text>
-  <text class="value" x="460" y="86" text-anchor="end">873</text>
+  <text class="value" x="460" y="86" text-anchor="end">874</text>
   <use href="#icon-merged" x="260" y="99"/>
   <text class="label" x="296" y="109">approved</text>
-  <text class="value" x="460" y="109" text-anchor="end">623</text>
+  <text class="value" x="460" y="109" text-anchor="end">624</text>
   <use href="#icon-comments" x="260" y="122"/>
   <text class="label" x="282" y="132">comments</text>
   <text class="value" x="460" y="132" text-anchor="end">882</text>
