@@ -1,31 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-09-29",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-09-29",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-09-29",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-09-29",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-09-29",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-09-30",
       "kind": "inline",
       "on_own_pr": true
@@ -4409,22 +4384,14 @@
       "date": "2026-09-24",
       "kind": "inline",
       "on_own_pr": true
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "conversational",
+      "on_own_pr": true
     }
   ],
   "commits": [
-    {
-      "date": "2025-09-29",
-      "languages": {
-        "Protocol Buffers": {
-          "additions": 1,
-          "deletions": 0
-        },
-        "Python": {
-          "additions": 2,
-          "deletions": 0
-        }
-      }
-    },
     {
       "date": "2025-09-30",
       "languages": {
@@ -9403,33 +9370,31 @@
           "deletions": 47
         }
       }
+    },
+    {
+      "date": "2026-09-29",
+      "languages": {
+        "Markdown": {
+          "additions": 3,
+          "deletions": 1
+        },
+        "Python": {
+          "additions": 4,
+          "deletions": 1
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "languages": {
+        "YAML": {
+          "additions": 1,
+          "deletions": 1
+        }
+      }
     }
   ],
   "prs": [
-    {
-      "created": "2025-09-29",
-      "cycle_hours": 1.16,
-      "merged": "2025-09-29",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-29",
-      "cycle_hours": 25.85,
-      "merged": "2025-09-30",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-29",
-      "cycle_hours": 30.41,
-      "merged": "2025-09-30",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-09-29",
-      "cycle_hours": 60.01,
-      "merged": "2025-10-02",
-      "state": "MERGED"
-    },
     {
       "created": "2025-09-30",
       "cycle_hours": 0.76,
@@ -12816,75 +12781,18 @@
     },
     {
       "created": "2026-09-28",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
+      "cycle_hours": 14.24,
+      "merged": "2026-09-29",
+      "state": "MERGED"
+    },
+    {
+      "created": "2026-09-28",
+      "cycle_hours": 22.68,
+      "merged": "2026-09-29",
+      "state": "MERGED"
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-09-29",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-29",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-29",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-29",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-29",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-09-29",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-29",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-29",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-09-29",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
     {
       "date": "2025-09-30",
       "has_body": false,
@@ -21231,8 +21139,8 @@
     }
   ],
   "window": {
-    "from": "2025-09-29",
-    "generated_at": "2026-09-28T12:22:04Z",
-    "to": "2026-09-28"
+    "from": "2025-09-30",
+    "generated_at": "2026-09-29T11:49:11Z",
+    "to": "2026-09-29"
   }
 }
