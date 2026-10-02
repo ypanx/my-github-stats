@@ -1,61 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-10-02",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-10-02",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-10-02",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-10-02",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-10-02",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-10-02",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-10-02",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-10-02",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-10-02",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-10-02",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-10-02",
-      "kind": "inline",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-10-03",
       "kind": "inline",
       "on_own_pr": false
@@ -4352,33 +4297,6 @@
     }
   ],
   "commits": [
-    {
-      "date": "2025-10-02",
-      "languages": {
-        "Markdown": {
-          "additions": 5,
-          "deletions": 1
-        }
-      }
-    },
-    {
-      "date": "2025-10-02",
-      "languages": {
-        "Text": {
-          "additions": 1,
-          "deletions": 2
-        }
-      }
-    },
-    {
-      "date": "2025-10-02",
-      "languages": {
-        "YAML": {
-          "additions": 2,
-          "deletions": 2
-        }
-      }
-    },
     {
       "date": "2025-10-03",
       "languages": {
@@ -9219,24 +9137,6 @@
   ],
   "prs": [
     {
-      "created": "2025-10-02",
-      "cycle_hours": 1.24,
-      "merged": "2025-10-02",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-10-02",
-      "cycle_hours": 17.91,
-      "merged": "2025-10-03",
-      "state": "MERGED"
-    },
-    {
-      "created": "2025-10-02",
-      "cycle_hours": 22.74,
-      "merged": "2025-10-03",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-10-03",
       "cycle_hours": 0.61,
       "merged": "2025-10-03",
@@ -12580,104 +12480,6 @@
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-10-02",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": true,
-      "state": "COMMENTED"
-    },
     {
       "date": "2025-10-03",
       "has_body": false,
@@ -20853,11 +20655,18 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-02",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-10-02",
-    "generated_at": "2026-10-01T12:04:37Z",
-    "to": "2026-10-01"
+    "from": "2025-10-03",
+    "generated_at": "2026-10-02T11:35:41Z",
+    "to": "2026-10-02"
   }
 }
