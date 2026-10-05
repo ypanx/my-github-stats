@@ -4259,6 +4259,26 @@
       "date": "2026-10-01",
       "kind": "conversational",
       "on_own_pr": false
+    },
+    {
+      "date": "2026-10-05",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-05",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-05",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-05",
+      "kind": "inline",
+      "on_own_pr": false
     }
   ],
   "commits": [
@@ -12367,6 +12387,36 @@
       "cycle_hours": 3.58,
       "merged": "2026-09-30",
       "state": "MERGED"
+    },
+    {
+      "created": "2026-10-05",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-10-05",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-10-05",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-10-05",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-10-05",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
     }
   ],
   "review_envelopes": [
@@ -20468,11 +20518,32 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-05",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-05",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-05",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": false,
+      "state": "COMMENTED"
     }
   ],
   "window": {
-    "from": "2025-10-05",
-    "generated_at": "2026-10-04T11:31:52Z",
-    "to": "2026-10-04"
+    "from": "2025-10-06",
+    "generated_at": "2026-10-05T13:01:47Z",
+    "to": "2026-10-05"
   }
 }
