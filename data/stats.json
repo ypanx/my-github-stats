@@ -1,21 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-10-07",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-10-07",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
-      "date": "2025-10-07",
-      "kind": "inline",
-      "on_own_pr": false
-    },
-    {
       "date": "2025-10-08",
       "kind": "conversational",
       "on_own_pr": true
@@ -4284,27 +4269,24 @@
       "date": "2026-10-06",
       "kind": "inline",
       "on_own_pr": false
+    },
+    {
+      "date": "2026-10-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-07",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-07",
+      "kind": "inline",
+      "on_own_pr": true
     }
   ],
   "commits": [
-    {
-      "date": "2025-10-07",
-      "languages": {
-        "Protocol Buffers": {
-          "additions": 19,
-          "deletions": 10
-        }
-      }
-    },
-    {
-      "date": "2025-10-07",
-      "languages": {
-        "Python": {
-          "additions": 10,
-          "deletions": 33
-        }
-      }
-    },
     {
       "date": "2025-10-08",
       "languages": {
@@ -9051,27 +9033,56 @@
           "deletions": 4
         }
       }
+    },
+    {
+      "date": "2026-10-06",
+      "languages": {
+        "SQL": {
+          "additions": 24,
+          "deletions": 0
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "languages": {
+        "Bazel": {
+          "additions": 2,
+          "deletions": 0
+        },
+        "Markdown": {
+          "additions": 3,
+          "deletions": 3
+        },
+        "Python": {
+          "additions": 163,
+          "deletions": 11
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "languages": {
+        "HTML": {
+          "additions": 1265,
+          "deletions": 0
+        },
+        "Markdown": {
+          "additions": 168,
+          "deletions": 0
+        },
+        "Python": {
+          "additions": 2074,
+          "deletions": 0
+        },
+        "Text": {
+          "additions": 1,
+          "deletions": 0
+        }
+      }
     }
   ],
   "prs": [
-    {
-      "created": "2025-10-07",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "CLOSED"
-    },
-    {
-      "created": "2025-10-07",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "CLOSED"
-    },
-    {
-      "created": "2025-10-07",
-      "cycle_hours": 64.42,
-      "merged": "2025-10-10",
-      "state": "MERGED"
-    },
     {
       "created": "2025-10-08",
       "cycle_hours": 1.06,
@@ -12368,81 +12379,30 @@
     },
     {
       "created": "2026-10-05",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
+      "cycle_hours": 35.86,
+      "merged": "2026-10-06",
+      "state": "MERGED"
     },
     {
       "created": "2026-10-06",
+      "cycle_hours": 16.24,
+      "merged": "2026-10-07",
+      "state": "MERGED"
+    },
+    {
+      "created": "2026-10-06",
+      "cycle_hours": 22.71,
+      "merged": "2026-10-07",
+      "state": "MERGED"
+    },
+    {
+      "created": "2026-10-07",
       "cycle_hours": null,
       "merged": null,
       "state": "OPEN"
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-10-07",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-07",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-07",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-07",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-07",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-07",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-07",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-10-07",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
-    {
-      "date": "2025-10-07",
-      "has_body": false,
-      "inline_count": 1,
-      "on_own_pr": false,
-      "state": "COMMENTED"
-    },
     {
       "date": "2025-10-08",
       "has_body": false,
@@ -20517,14 +20477,77 @@
     {
       "date": "2026-10-06",
       "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-06",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-06",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-06",
+      "has_body": false,
       "inline_count": 1,
       "on_own_pr": false,
+      "state": "COMMENTED"
+    },
+    {
+      "date": "2026-10-07",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-07",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-07",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-07",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-07",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-07",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": true,
       "state": "COMMENTED"
     }
   ],
   "window": {
-    "from": "2025-10-07",
-    "generated_at": "2026-10-06T12:26:30Z",
-    "to": "2026-10-06"
+    "from": "2025-10-08",
+    "generated_at": "2026-10-07T12:19:30Z",
+    "to": "2026-10-07"
   }
 }
