@@ -4294,6 +4294,31 @@
       "date": "2026-10-09",
       "kind": "inline",
       "on_own_pr": false
+    },
+    {
+      "date": "2026-10-12",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-12",
+      "kind": "inline",
+      "on_own_pr": false
+    },
+    {
+      "date": "2026-10-12",
+      "kind": "inline",
+      "on_own_pr": false
+    },
+    {
+      "date": "2026-10-12",
+      "kind": "inline",
+      "on_own_pr": false
+    },
+    {
+      "date": "2026-10-12",
+      "kind": "inline",
+      "on_own_pr": false
     }
   ],
   "commits": [
@@ -12369,6 +12394,12 @@
     },
     {
       "created": "2026-10-08",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-10-12",
       "cycle_hours": null,
       "merged": null,
       "state": "OPEN"
@@ -20543,11 +20574,46 @@
       "inline_count": 1,
       "on_own_pr": false,
       "state": "COMMENTED"
+    },
+    {
+      "date": "2026-10-12",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-12",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": false,
+      "state": "COMMENTED"
+    },
+    {
+      "date": "2026-10-12",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": false,
+      "state": "COMMENTED"
+    },
+    {
+      "date": "2026-10-12",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": false,
+      "state": "COMMENTED"
+    },
+    {
+      "date": "2026-10-12",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": false,
+      "state": "COMMENTED"
     }
   ],
   "window": {
-    "from": "2025-10-12",
-    "generated_at": "2026-10-11T11:49:24Z",
-    "to": "2026-10-11"
+    "from": "2025-10-13",
+    "generated_at": "2026-10-12T13:53:43Z",
+    "to": "2026-10-12"
   }
 }
