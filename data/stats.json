@@ -1,21 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-10-15",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-10-15",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-10-15",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-10-16",
       "kind": "conversational",
       "on_own_pr": true
@@ -4322,15 +4307,6 @@
     }
   ],
   "commits": [
-    {
-      "date": "2025-10-15",
-      "languages": {
-        "YAML": {
-          "additions": 16,
-          "deletions": 4
-        }
-      }
-    },
     {
       "date": "2025-10-16",
       "languages": {
@@ -9072,12 +9048,6 @@
   ],
   "prs": [
     {
-      "created": "2025-10-15",
-      "cycle_hours": 4.37,
-      "merged": "2025-10-15",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-10-16",
       "cycle_hours": 0.85,
       "merged": "2025-10-16",
@@ -12385,13 +12355,6 @@
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-10-15",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
     {
       "date": "2025-10-16",
       "has_body": false,
@@ -20497,11 +20460,18 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-15",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-10-15",
-    "generated_at": "2026-10-14T10:52:09Z",
-    "to": "2026-10-14"
+    "from": "2025-10-16",
+    "generated_at": "2026-10-15T10:35:10Z",
+    "to": "2026-10-15"
   }
 }
