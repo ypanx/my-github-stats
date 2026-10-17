@@ -8986,18 +8986,6 @@
   ],
   "prs": [
     {
-      "created": "2025-10-17",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "CLOSED"
-    },
-    {
-      "created": "2025-10-17",
-      "cycle_hours": 159.19,
-      "merged": "2025-10-24",
-      "state": "MERGED"
-    },
-    {
       "created": "2025-10-21",
       "cycle_hours": null,
       "merged": null,
@@ -12281,41 +12269,6 @@
     }
   ],
   "review_envelopes": [
-    {
-      "date": "2025-10-17",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-17",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-17",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-17",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
-      "date": "2025-10-17",
-      "has_body": true,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
     {
       "date": "2025-10-18",
       "has_body": false,
@@ -20382,8 +20335,8 @@
     }
   ],
   "window": {
-    "from": "2025-10-17",
-    "generated_at": "2026-10-16T10:22:13Z",
-    "to": "2026-10-16"
+    "from": "2025-10-18",
+    "generated_at": "2026-10-17T09:54:54Z",
+    "to": "2026-10-17"
   }
 }
