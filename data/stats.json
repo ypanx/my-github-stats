@@ -3652,6 +3652,16 @@
     },
     {
       "date": "2026-07-16",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-07-16",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-07-16",
       "kind": "inline",
       "on_own_pr": false
     },
@@ -3767,6 +3777,11 @@
     },
     {
       "date": "2026-07-20",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-07-20",
       "kind": "inline",
       "on_own_pr": false
     },
@@ -3813,6 +3828,16 @@
     {
       "date": "2026-07-20",
       "kind": "inline",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-07-21",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-07-21",
+      "kind": "conversational",
       "on_own_pr": true
     },
     {
@@ -3829,6 +3854,11 @@
       "date": "2026-07-22",
       "kind": "conversational",
       "on_own_pr": false
+    },
+    {
+      "date": "2026-07-22",
+      "kind": "conversational",
+      "on_own_pr": true
     },
     {
       "date": "2026-07-22",
@@ -4268,6 +4298,51 @@
     {
       "date": "2026-10-14",
       "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-19",
+      "kind": "inline",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-19",
+      "kind": "inline",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-19",
+      "kind": "inline",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-19",
+      "kind": "inline",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-19",
+      "kind": "inline",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-19",
+      "kind": "inline",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-19",
+      "kind": "inline",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-19",
+      "kind": "inline",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-19",
+      "kind": "inline",
       "on_own_pr": true
     }
   ],
@@ -12263,6 +12338,24 @@
     },
     {
       "created": "2026-10-14",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-10-19",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-10-19",
+      "cycle_hours": null,
+      "merged": null,
+      "state": "OPEN"
+    },
+    {
+      "created": "2026-10-19",
       "cycle_hours": null,
       "merged": null,
       "state": "OPEN"
@@ -20339,11 +20432,39 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-19",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-19",
+      "has_body": true,
+      "inline_count": 2,
+      "on_own_pr": true,
+      "state": "COMMENTED"
+    },
+    {
+      "date": "2026-10-19",
+      "has_body": true,
+      "inline_count": 3,
+      "on_own_pr": true,
+      "state": "COMMENTED"
+    },
+    {
+      "date": "2026-10-19",
+      "has_body": true,
+      "inline_count": 4,
+      "on_own_pr": true,
+      "state": "COMMENTED"
     }
   ],
   "window": {
-    "from": "2025-10-19",
-    "generated_at": "2026-10-18T10:07:06Z",
-    "to": "2026-10-18"
+    "from": "2025-10-20",
+    "generated_at": "2026-10-19T11:34:19Z",
+    "to": "2026-10-19"
   }
 }
