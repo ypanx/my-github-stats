@@ -1,26 +1,6 @@
 {
   "comments": [
     {
-      "date": "2025-10-21",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-10-21",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-10-21",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
-      "date": "2025-10-21",
-      "kind": "conversational",
-      "on_own_pr": true
-    },
-    {
       "date": "2025-10-22",
       "kind": "conversational",
       "on_own_pr": true
@@ -4368,19 +4348,15 @@
     {
       "date": "2026-10-20",
       "kind": "conversational",
+      "on_own_pr": false
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "conversational",
       "on_own_pr": true
     }
   ],
   "commits": [
-    {
-      "date": "2025-10-21",
-      "languages": {
-        "Terraform": {
-          "additions": 1,
-          "deletions": 0
-        }
-      }
-    },
     {
       "date": "2025-10-22",
       "languages": {
@@ -9134,21 +9110,60 @@
           "deletions": 7
         }
       }
+    },
+    {
+      "date": "2026-10-21",
+      "languages": {
+        "Bazel": {
+          "additions": 8,
+          "deletions": 0
+        },
+        "Markdown": {
+          "additions": 29,
+          "deletions": 23
+        },
+        "Python": {
+          "additions": 171,
+          "deletions": 15
+        },
+        "YAML": {
+          "additions": 0,
+          "deletions": 3
+        }
+      }
+    },
+    {
+      "date": "2026-10-21",
+      "languages": {
+        "Markdown": {
+          "additions": 11,
+          "deletions": 10
+        },
+        "YAML": {
+          "additions": 0,
+          "deletions": 4
+        }
+      }
+    },
+    {
+      "date": "2026-10-21",
+      "languages": {
+        "Markdown": {
+          "additions": 69,
+          "deletions": 43
+        },
+        "Shell": {
+          "additions": 11,
+          "deletions": 1
+        },
+        "YAML": {
+          "additions": 0,
+          "deletions": 2
+        }
+      }
     }
   ],
   "prs": [
-    {
-      "created": "2025-10-21",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "CLOSED"
-    },
-    {
-      "created": "2025-10-21",
-      "cycle_hours": 0.71,
-      "merged": "2025-10-21",
-      "state": "MERGED"
-    },
     {
       "created": "2025-10-22",
       "cycle_hours": 2.13,
@@ -12427,26 +12442,26 @@
     },
     {
       "created": "2026-10-19",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
-    },
-    {
-      "created": "2026-10-19",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
-    },
-    {
-      "created": "2026-10-19",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "OPEN"
-    },
-    {
-      "created": "2026-10-19",
       "cycle_hours": 0.58,
       "merged": "2026-10-19",
+      "state": "MERGED"
+    },
+    {
+      "created": "2026-10-19",
+      "cycle_hours": 41.73,
+      "merged": "2026-10-21",
+      "state": "MERGED"
+    },
+    {
+      "created": "2026-10-19",
+      "cycle_hours": 42.17,
+      "merged": "2026-10-21",
+      "state": "MERGED"
+    },
+    {
+      "created": "2026-10-19",
+      "cycle_hours": 45.08,
+      "merged": "2026-10-21",
       "state": "MERGED"
     }
   ],
@@ -20563,11 +20578,81 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-20",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-20",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-20",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-20",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-20",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-20",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-20",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-20",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-20",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-21",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
     }
   ],
   "window": {
-    "from": "2025-10-21",
-    "generated_at": "2026-10-20T10:39:36Z",
-    "to": "2026-10-20"
+    "from": "2025-10-22",
+    "generated_at": "2026-10-21T10:51:05Z",
+    "to": "2026-10-21"
   }
 }
