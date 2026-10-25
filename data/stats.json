@@ -12339,13 +12339,6 @@
   ],
   "review_envelopes": [
     {
-      "date": "2025-10-25",
-      "has_body": false,
-      "inline_count": 0,
-      "on_own_pr": false,
-      "state": "APPROVED"
-    },
-    {
       "date": "2025-10-27",
       "has_body": false,
       "inline_count": 1,
@@ -20572,8 +20565,8 @@
     }
   ],
   "window": {
-    "from": "2025-10-25",
-    "generated_at": "2026-10-24T10:00:36Z",
-    "to": "2026-10-24"
+    "from": "2025-10-26",
+    "generated_at": "2026-10-25T10:24:23Z",
+    "to": "2026-10-25"
   }
 }
