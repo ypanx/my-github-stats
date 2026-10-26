@@ -4284,6 +4284,16 @@
       "date": "2026-10-23",
       "kind": "conversational",
       "on_own_pr": true
+    },
+    {
+      "date": "2026-10-26",
+      "kind": "conversational",
+      "on_own_pr": true
+    },
+    {
+      "date": "2026-10-26",
+      "kind": "inline",
+      "on_own_pr": false
     }
   ],
   "commits": [
@@ -9066,18 +9076,6 @@
     }
   ],
   "prs": [
-    {
-      "created": "2025-10-26",
-      "cycle_hours": null,
-      "merged": null,
-      "state": "CLOSED"
-    },
-    {
-      "created": "2025-10-26",
-      "cycle_hours": 53.19,
-      "merged": "2025-10-28",
-      "state": "MERGED"
-    },
     {
       "created": "2025-10-29",
       "cycle_hours": 1.01,
@@ -20562,11 +20560,60 @@
       "inline_count": 0,
       "on_own_pr": false,
       "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-25",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-26",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-26",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-26",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-26",
+      "has_body": false,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "APPROVED"
+    },
+    {
+      "date": "2026-10-26",
+      "has_body": true,
+      "inline_count": 0,
+      "on_own_pr": false,
+      "state": "COMMENTED"
+    },
+    {
+      "date": "2026-10-26",
+      "has_body": false,
+      "inline_count": 1,
+      "on_own_pr": false,
+      "state": "COMMENTED"
     }
   ],
   "window": {
-    "from": "2025-10-26",
-    "generated_at": "2026-10-25T10:24:23Z",
-    "to": "2026-10-25"
+    "from": "2025-10-27",
+    "generated_at": "2026-10-26T11:52:53Z",
+    "to": "2026-10-26"
   }
 }
